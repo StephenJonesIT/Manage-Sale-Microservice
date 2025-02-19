@@ -1,0 +1,15 @@
+{
+    "port": ":8810",
+    "enableGinConsoleLog": true,
+    "enableGinFileLog": false,
+    "logFileName": "logs/server.log",
+    "logMaxSize": 10,
+    "logMaxBackups": 10,
+    "logMaxAge": 30,
+    "mgAddrs": "127.0.0.1:3307",
+    "mgDbName": "products_service",
+    "mgUsername": "root",
+    "mgDbPassword": "",
+    "jwtSecretPassword": "supersecretkey",
+    "isser": "myapp"
+}

@@ -16,3 +16,7 @@ type Product struct {
 	Supplier_ID	   string  `json:"supplier_id,omitempty" gorm:"column:supplier_id"`
 	common.CommonTime
 }
+
+func(Product) TableName() string {
+	return "products"
+}
