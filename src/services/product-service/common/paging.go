@@ -1,3 +1,8 @@
+/*
+* @File: common.paging.go
+* @Description: Defines Paging information of the service
+* @Author: Tran Thanh Sang (tranthanhsang.it.la@gmail.com)
+*/
 package common
 
 type Paging struct{

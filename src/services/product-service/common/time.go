@@ -1,3 +1,9 @@
+/*
+* @File: common.time.go
+* @Description: Defines time information for the service
+* @Author: Tran Thanh Sang (tranthanhsang.it.la@gmail.com)
+*/
+
 package common
 
 import "time"

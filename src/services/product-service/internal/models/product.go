@@ -1,3 +1,8 @@
+/*
+* @File: models.product.go
+* @Description: Defines products information will be returned to the clients
+* @Author: Tran Thanh Sang (tranthanhsang.it.la@gmail.com)
+*/
 package models
 
 import "product-service/common"

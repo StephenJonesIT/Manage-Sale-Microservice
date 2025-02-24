@@ -1,3 +1,8 @@
+/*
+* @File: common.config.go
+* @Description: Defines config information of the service
+* @Author: Tran Thanh Sang (tranthanhsang.it.la@gmail.com)
+*/
 package common
 
 import (
@@ -27,7 +32,7 @@ type Configuration struct {
 var Config *Configuration
 
 func LoadConfig() error {
-	file, err := os.Open("../pkg/config/config.json")
+	file, err := os.Open("pkg/config/config.json")
 
 	if err != nil{
 		return err

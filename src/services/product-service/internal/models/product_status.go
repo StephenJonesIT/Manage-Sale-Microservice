@@ -1,3 +1,9 @@
+/*
+* @File: models.product_status.go
+* @Description: Implements product status enumeration and related functions
+* @Author: Tran Thanh Sang (tranthanhsang.it.la@gmail.com)
+*/
+
 package models
 
 import (

@@ -1,3 +1,8 @@
+/*
+* @File: common.error.go
+* @Description: Defines AppError information will be returned to the clients
+* @Author: Tran Thanh Sang (tranthanhsang.it.la@gmail.com)
+*/
 package common
 
 type AppError struct{

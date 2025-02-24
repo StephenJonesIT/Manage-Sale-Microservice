@@ -1,3 +1,9 @@
+/*
+* @File: business.product_service.go
+* @Description: Implements Product CRUD functions for ProductService
+* @Author: Tran Thanh Sang (tranthanhsang.it.la@gmail.com)
+*/
+
 package business
 
 import (
