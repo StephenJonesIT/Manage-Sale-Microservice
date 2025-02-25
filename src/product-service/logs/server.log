@@ -1,0 +1,44 @@
+{"level":"info","msg":"Connecting to database...","time":"2025-02-24T22:56:02+07:00"}
+{"level":"info","msg":"Connect database successfully","time":"2025-02-24T22:56:02+07:00"}
+{"level":"info","msg":"Setting up logging...","time":"2025-02-24T22:56:02+07:00"}
+{"level":"info","msg":"Server initialization complete","time":"2025-02-24T22:56:02+07:00"}
+{"level":"info","msg":"Creating repositories and services...","time":"2025-02-24T22:56:02+07:00"}
+{"level":"info","msg":"Setting up API routes...","time":"2025-02-24T22:56:02+07:00"}
+{"level":"info","msg":"Connecting to database...","time":"2025-02-24T22:57:26+07:00"}
+{"level":"info","msg":"Connect database successfully","time":"2025-02-24T22:57:26+07:00"}
+{"level":"info","msg":"Setting up logging...","time":"2025-02-24T22:57:26+07:00"}
+{"level":"info","msg":"Server initialization complete","time":"2025-02-24T22:57:26+07:00"}
+{"level":"info","msg":"Creating repositories and services...","time":"2025-02-24T22:57:26+07:00"}
+{"level":"info","msg":"Setting up API routes...","time":"2025-02-24T22:57:26+07:00"}
+{"level":"info","msg":"Connecting to database...","time":"2025-02-24T22:58:16+07:00"}
+{"level":"info","msg":"Connect database successfully","time":"2025-02-24T22:58:16+07:00"}
+{"level":"info","msg":"Setting up logging...","time":"2025-02-24T22:58:16+07:00"}
+{"level":"info","msg":"Server initialization complete","time":"2025-02-24T22:58:16+07:00"}
+{"level":"info","msg":"Creating repositories and services...","time":"2025-02-24T22:58:16+07:00"}
+{"level":"info","msg":"Setting up API routes...","time":"2025-02-24T22:58:16+07:00"}
+{"level":"info","msg":"GetAllProducts endpoint called","time":"2025-02-24T23:00:02+07:00"}
+{"level":"info","msg":"Product list retrieved successfully","time":"2025-02-24T23:00:02+07:00"}
+{"level":"info","msg":"GetAllProducts endpoint called","time":"2025-02-24T23:00:09+07:00"}
+{"level":"info","msg":"Product list retrieved successfully","time":"2025-02-24T23:00:09+07:00"}
+{"level":"info","msg":"GetAllProducts endpoint called","time":"2025-02-24T23:00:17+07:00"}
+{"level":"info","msg":"Product list retrieved successfully","time":"2025-02-24T23:00:17+07:00"}
+{"level":"info","msg":"Connecting to database...","time":"2025-02-24T23:01:54+07:00"}
+{"level":"info","msg":"Connect database successfully","time":"2025-02-24T23:01:54+07:00"}
+{"level":"info","msg":"Setting up logging...","time":"2025-02-24T23:01:54+07:00"}
+{"level":"info","msg":"Server initialization complete","time":"2025-02-24T23:01:54+07:00"}
+{"level":"info","msg":"Creating repositories and services...","time":"2025-02-24T23:01:54+07:00"}
+{"level":"info","msg":"Setting up API routes...","time":"2025-02-24T23:01:54+07:00"}
+{"level":"info","msg":"Connecting to database...","time":"2025-02-24T23:03:34+07:00"}
+{"level":"info","msg":"Connect database successfully","time":"2025-02-24T23:03:34+07:00"}
+{"level":"info","msg":"Setting up logging...","time":"2025-02-24T23:03:34+07:00"}
+{"level":"info","msg":"Server initialization complete","time":"2025-02-24T23:03:34+07:00"}
+{"level":"info","msg":"Creating repositories and services...","time":"2025-02-24T23:03:34+07:00"}
+{"level":"info","msg":"Setting up API routes...","time":"2025-02-24T23:03:34+07:00"}
+{"level":"info","msg":"Connecting to database...","time":"2025-02-24T23:04:45+07:00"}
+{"level":"info","msg":"Connect database successfully","time":"2025-02-24T23:04:45+07:00"}
+{"level":"info","msg":"Setting up logging...","time":"2025-02-24T23:04:45+07:00"}
+{"level":"info","msg":"Server initialization complete","time":"2025-02-24T23:04:45+07:00"}
+{"level":"info","msg":"Creating repositories and services...","time":"2025-02-24T23:04:45+07:00"}
+{"level":"info","msg":"Setting up API routes...","time":"2025-02-24T23:04:45+07:00"}
+{"level":"info","msg":"GetAllProducts endpoint called","time":"2025-02-24T23:07:36+07:00"}
+{"level":"info","msg":"Product list retrieved successfully","time":"2025-02-24T23:07:36+07:00"}
