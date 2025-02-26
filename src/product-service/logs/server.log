@@ -42,3 +42,19 @@
 {"level":"info","msg":"Setting up API routes...","time":"2025-02-24T23:04:45+07:00"}
 {"level":"info","msg":"GetAllProducts endpoint called","time":"2025-02-24T23:07:36+07:00"}
 {"level":"info","msg":"Product list retrieved successfully","time":"2025-02-24T23:07:36+07:00"}
+{"level":"info","msg":"Connecting to database...","time":"2025-02-26T18:36:00+07:00"}
+{"level":"info","msg":"Connect database successfully","time":"2025-02-26T18:36:00+07:00"}
+{"level":"info","msg":"Setting up logging...","time":"2025-02-26T18:36:00+07:00"}
+{"level":"info","msg":"Server initialization complete","time":"2025-02-26T18:36:00+07:00"}
+{"level":"info","msg":"Creating repositories and services...","time":"2025-02-26T18:36:00+07:00"}
+{"level":"info","msg":"Setting up API routes...","time":"2025-02-26T18:36:00+07:00"}
+{"level":"info","msg":"GetAllCategories endpoint called","time":"2025-02-26T18:36:24+07:00"}
+{"level":"error","msg":"Failed to retrieve categories list: Error 1054 (42S22): Unknown column 'id_category' in 'order clause'","time":"2025-02-26T18:36:24+07:00"}
+{"level":"info","msg":"Connecting to database...","time":"2025-02-26T18:37:29+07:00"}
+{"level":"info","msg":"Connect database successfully","time":"2025-02-26T18:37:29+07:00"}
+{"level":"info","msg":"Setting up logging...","time":"2025-02-26T18:37:29+07:00"}
+{"level":"info","msg":"Server initialization complete","time":"2025-02-26T18:37:29+07:00"}
+{"level":"info","msg":"Creating repositories and services...","time":"2025-02-26T18:37:29+07:00"}
+{"level":"info","msg":"Setting up API routes...","time":"2025-02-26T18:37:29+07:00"}
+{"level":"info","msg":"GetAllCategories endpoint called","time":"2025-02-26T18:37:35+07:00"}
+{"level":"info","msg":"Categories list retrieved successfully","time":"2025-02-26T18:37:35+07:00"}

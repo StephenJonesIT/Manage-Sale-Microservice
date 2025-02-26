@@ -1,18 +1,21 @@
 package main
 
 import (
-	"github.com/gin-gonic/gin"
-	log "github.com/sirupsen/logrus"
-	swaggerFiles "github.com/swaggo/files"
-	ginSwagger "github.com/swaggo/gin-swagger"
-	_ "product-service/docs"
+	"fmt"
 	"io"
 	"os"
 	"product-service/common"
+	_ "product-service/docs"
 	"product-service/internal/business"
 	"product-service/internal/handlers"
 	"product-service/internal/repository"
 	"product-service/pkg/database"
+
+	"github.com/gin-gonic/gin"
+	log "github.com/sirupsen/logrus"
+	swaggerFiles "github.com/swaggo/files"
+	ginSwagger "github.com/swaggo/gin-swagger"
+	"gorm.io/gorm"
 )
 
 type Main struct {
@@ -59,6 +62,31 @@ func (m *Main) initServer() error {
 	return nil
 }
 
+func(m *Main) InitializeProductComponents(database *gorm.DB) (*handlers.ProductHandler, error) {
+    log.Info("Creating repositories and services...")
+
+    productRepo := repository.NewProductRepository(database)
+    if productRepo == nil {
+        log.Fatal("Failed to create product repository")
+        return nil, fmt.Errorf("failed to create product repository")
+    }
+
+    productService := business.NewProductService(productRepo)
+    if productService == nil {
+        log.Fatal("Failed to create product service")
+        return nil, fmt.Errorf("failed to create product service")
+    }
+
+    productHandler := handlers.NewProductHandler(productService)
+    if productHandler == nil {
+        log.Fatal("Failed to create product handler")
+        return nil, fmt.Errorf("failed to create product handler")
+    }
+
+    return productHandler, nil
+}
+
+
 func main() {
 	log.Info("Starting application...")
 	m := Main{}
@@ -71,28 +99,18 @@ func main() {
 		log.Fatal("Database connection is nil")
 	}
 
-	log.Info("Creating repositories and services...")
-	productRepo := repository.NewProductRepository(database.DB)
-	if productRepo == nil {
-		log.Fatal("Failed to create product repository")
-	}
+	productHandler,_ := m.InitializeProductComponents(database.DB)
 
-	productService := business.NewProductService(productRepo)
-	if productService == nil {
-		log.Fatal("Failed to create product service")
-	}
-
-	productHandler := handlers.NewProductHandler(productService)
-	if productHandler == nil {
-		log.Fatal("Failed to create product handler")
-	}
+	categoryRepo := repository.NewCategoryRepository(database.DB)
+	categoryService := business.NewCategoryService(categoryRepo)
+	categoryHandler := handlers.NewCategoryHandler(categoryService)
 
 	log.Info("Setting up API routes...")
 
 	m.router.GET("/swagger/*any", func(c *gin.Context) {
 		ginSwagger.WrapHandler(swaggerFiles.Handler)(c)
 	})
-
+	
 	api := m.router.Group("/api")
 	{
 		api.GET("/products", productHandler.GetAllProducts)
@@ -100,6 +118,7 @@ func main() {
 		api.POST("/product", productHandler.CreateProduct)
 		api.PUT("/product", productHandler.UpdateProduct)
 		api.DELETE("/product/:id", productHandler.DeleteProduct)
+		api.GET("/categories", categoryHandler.GetAllCategories)
 	}
 
 	err = m.router.Run(common.Config.Port)
