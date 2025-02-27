@@ -12,6 +12,14 @@ import (
 	"product-service/internal/repository"
 )
 
+type ProductServiceInterface interface {
+	GetAllProducts(filter *common.Filter, paging *common.Paging) ([]models.Product, error)
+	GetProductByID(productID string) (*models.Product, error)
+	CreateProduct(product *models.Product) (error)
+	UpdateProduct(product *models.Product) (error)
+	DeleteProduct(productID string) (error)
+}
+
 type ProductServiceImpl struct {
 	ProductRepo repository.ProductRepostitory
 }

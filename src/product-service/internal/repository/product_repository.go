@@ -1,5 +1,5 @@
 /*
-* @File: business.product_service.go
+* @File: repository.product_repository.go
 * @Description: Implements Product CRUD functions for MySQL
 * @Author: Tran Thanh Sang (tranthanhsang.it.la@gmail.com)
 */
@@ -13,6 +13,13 @@ import (
 
 	"gorm.io/gorm"
 )
+type ProductRepostitory interface {
+	GetAll(filter *common.Filter, paging *common.Paging)([]models.Product, error)
+	GetByID(productID string)(*models.Product, error)
+	Create(product *models.Product) error
+	Update(product *models.Product) error
+	Delete(productID string) error
+}
 
 type ProductRepositoryImpl struct {
 	DB *gorm.DB

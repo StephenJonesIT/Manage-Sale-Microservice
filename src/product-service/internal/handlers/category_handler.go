@@ -5,6 +5,7 @@ import (
 	"product-service/common"
 	"product-service/internal/business"
 	"product-service/internal/models"
+	"strconv"
 
 	"github.com/gin-gonic/gin"
 	log "github.com/sirupsen/logrus"
@@ -112,7 +113,7 @@ func(handler *CategoryHandler) CreateCategory(ctx *gin.Context){
 // UpdateCategory godoc
 // @Summary Update an existing category
 // @Description Update an existing category with the provided parameters
-// @Tags Categories
+// @Tags categories
 // @Accept json
 // @Produce json
 // @Param category body models.Category true "Category to update"
@@ -122,8 +123,19 @@ func(handler *CategoryHandler) CreateCategory(ctx *gin.Context){
 // @Failure 500 {object} common.AppError
 // @Router /api/category/{id} [put]
 func(handler *CategoryHandler) UpdateCategory(ctx *gin.Context){
-    id := ctx.Param("id")
-    
+    idParam := ctx.Param("id")
+    id, err := strconv.Atoi(idParam)
+    if err != nil {
+        ctx.JSON(http.StatusBadRequest, common.NewAppError(
+            http.StatusBadRequest,
+            err,
+            "Invalid category ID",
+            "Error converting category ID",
+            "BAD_REQUEST",
+        ))
+        return
+    }
+
     var updateCategory models.Category
 
     if err := ctx.ShouldBindJSON(&updateCategory); err != nil{
@@ -160,3 +172,82 @@ func(handler *CategoryHandler) UpdateCategory(ctx *gin.Context){
         nil,
     ))
 } 
+
+// DeleteCategory godoc
+// @Summary Deleted a category
+// @Description Delete a category by id
+// @Tags categories
+// @Accept json
+// @Produce json
+// @Param id path string true "Category ID"
+// @Success 200 {object} common.Response
+// @Success 500 {object} common.AppError
+// @Router /api/category/{id} [delete]
+func(handler *CategoryHandler) DeleteCategory(ctx *gin.Context){
+    idParam := ctx.Param("id")
+    id, err := strconv.Atoi(idParam)
+
+    if err != nil {
+        ctx.JSON(http.StatusBadRequest,common.NewAppError(
+            http.StatusBadRequest,
+            err,
+            "Invalid category parameters",
+            "Error binding category parameters",
+            "BAD_REQUEST",
+        ))
+        return 
+    }
+
+    if err := handler.service.DeleteCategory(id); err != nil {
+        ctx.JSON(http.StatusInternalServerError, err)
+        return
+    }
+
+    ctx.JSON(http.StatusOK, common.NewResponse(
+        http.StatusOK,
+        "Category deleted successfully",
+        true,
+        nil,
+        nil,
+    ))
+}
+
+// GetCategory godoc
+// @Summary Get a category
+// @Description Get a category by id
+// @Tags categories
+// @Accept json
+// @Produce json
+// @Param id path string true "Category ID"
+// @Success 200 {object} common.Response
+// @Success 400 {object} common.AppError
+// @Router /api/category/{id} [get]
+func(handler *CategoryHandler) GetCategory(ctx *gin.Context){
+    idParam := ctx.Param("id")
+    id, err := strconv.Atoi(idParam)
+
+    if err != nil {
+        ctx.JSON(http.StatusBadRequest, common.NewAppError(
+            http.StatusBadRequest,
+            err,
+            "Invalid category parameters",
+            "Error binding category parameters",
+            "BAD_REQUEST",
+        ))
+        return
+    }
+
+    category, err := handler.service.GetCategoryByID(id)
+    if err != nil {
+        ctx.JSON(http.StatusInternalServerError, err)
+        return
+    }
+
+    ctx.JSON(http.StatusOK, common.NewResponse(
+        http.StatusOK,
+        "Get a category successfully",
+        category,
+        nil,
+        nil,
+    ))
+}

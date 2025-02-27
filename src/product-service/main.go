@@ -121,7 +121,9 @@ func main() {
 
 		api.GET("/categories", categoryHandler.GetAllCategories)
 		api.POST("/category", categoryHandler.CreateCategory)
-		api.PUT("/category/:id", )
+		api.PUT("/category/:id", categoryHandler.UpdateCategory)
+		api.DELETE("/category/:id", categoryHandler.DeleteCategory)
+		api.GET("/category/:id", categoryHandler.GetCategory)
 	}
 
 	err = m.router.Run(common.Config.Port)

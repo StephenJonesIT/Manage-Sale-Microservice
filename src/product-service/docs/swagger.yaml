@@ -26,6 +26,15 @@ definitions:
       description:
         type: string
     type: object
+  models.Category:
+    properties:
+      category_id:
+        type: integer
+      category_name:
+        type: string
+      description:
+        type: string
+    type: object
   models.Product:
     properties:
       category_id:
@@ -145,6 +154,89 @@ paths:
       summary: Create a new category
       tags:
       - categories
+  /api/category/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: Delete a category by id
+      parameters:
+      - description: Category ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/common.Response'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/common.AppError'
+      summary: Deleted a category
+      tags:
+      - categories
+    get:
+      consumes:
+      - application/json
+      description: Get a category by id
+      parameters:
+      - description: Category ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/common.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/common.AppError'
+      summary: Get a category
+      tags:
+      - categories
+    put:
+      consumes:
+      - application/json
+      description: Update an existing category with the provided parameters
+      parameters:
+      - description: Category to update
+        in: body
+        name: category
+        required: true
+        schema:
+          $ref: '#/definitions/models.Category'
+      - description: Category ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/common.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/common.AppError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/common.AppError'
+      summary: Update an existing category
+      tags:
+      - categories
   /api/product:
     post:
       consumes:
@@ -173,35 +265,6 @@ paths:
           schema:
             $ref: '#/definitions/common.AppError'
       summary: Create a new product
-      tags:
-      - products
-    put:
-      consumes:
-      - application/json
-      description: Update an existing product with the provided parameters
-      parameters:
-      - description: Product to update
-        in: body
-        name: product
-        required: true
-        schema:
-          $ref: '#/definitions/models.Product'
-      produces:
-      - application/json
-      responses:
-        "200":
-          description: OK
-          schema:
-            $ref: '#/definitions/common.Response'
-        "400":
-          description: Bad Request
-          schema:
-            $ref: '#/definitions/common.AppError'
-        "500":
-          description: Internal Server Error
-          schema:
-            $ref: '#/definitions/common.AppError'
-      summary: Update an existing product
       tags:
       - products
   /api/product/{id}:
@@ -251,6 +314,35 @@ paths:
           schema:
             $ref: '#/definitions/common.AppError'
       summary: Get a product
+      tags:
+      - products
+    put:
+      consumes:
+      - application/json
+      description: Update an existing product with the provided parameters
+      parameters:
+      - description: Product to update
+        in: body
+        name: product
+        required: true
+        schema:
+          $ref: '#/definitions/models.Product'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/common.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/common.AppError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/common.AppError'
+      summary: Update an existing product
       tags:
       - products
   /api/products:

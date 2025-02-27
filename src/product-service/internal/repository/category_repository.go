@@ -1,5 +1,5 @@
 /*
-* @File: business.product_service.go
+* @File: repository.category_repository.go
 * @Description: Implements category CRUD functions for MySQL
 * @Author: Tran Thanh Sang (tranthanhsang.it.la@gmail.com)
 */
@@ -13,6 +13,14 @@ import (
 
 	"gorm.io/gorm"
 )
+
+type CategoryRepository interface {
+	GetAll(paging *common.Paging) ([]models.Category, error)
+	GetByID(id interface{}) (*models.Category, error)
+	Create(category *models.AddCategory) error
+	Update(category *models.Category) error
+	Delete(id interface{}) error
+}
 
 type CategoryRepositoryImpl struct {
 	DB *gorm.DB
@@ -115,7 +123,7 @@ func(repo *CategoryRepositoryImpl) Create(item *models.AddCategory) error{
 }
 
 func(repo *CategoryRepositoryImpl) Update(item *models.Category) error {
-	if err := repo.DB.Save(item).Error; err != nil{
+	if err := repo.DB.Where("category_id = ?", item.Category_ID).Save(item).Error; err != nil{
 		return common.NewAppError(
 			http.StatusInternalServerError,
 			err,
@@ -128,5 +136,14 @@ func(repo *CategoryRepositoryImpl) Update(item *models.Category) error {
 }
 	
 func(repo *CategoryRepositoryImpl) Delete(id interface{}) error {
+	if err := repo.DB.Delete(models.Category{}, id).Error; err != nil{
+		return common.NewAppError(
+			http.StatusInternalServerError,
+			err,
+			"Fail to delete category",
+			"Database error while deleting category",
+			"INTERNAL_SERVER_ERROR",
+		)
+	}
 	return nil
 }

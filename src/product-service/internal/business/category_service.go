@@ -1,3 +1,6 @@
+// @File business.category_service.go
+// @Description Implements category CRUD functions for CategoryService
+// @Author Tran Thanh Sang (tranthanhsang.it.la@gmail.com)
 package business
 
 import (
@@ -5,6 +8,14 @@ import (
 	"product-service/internal/models"
 	"product-service/internal/repository"
 )
+
+type CategoryService interface {
+	GetAllCategories(paging *common.Paging) ([]models.Category, error)
+	GetCategoryByID(id interface{}) (*models.Category, error)
+	CreateCategory(item *models.AddCategory) error
+	UpdateCategory(item *models.Category) error
+	DeleteCategory(id interface{}) error
+}
 
 type CategoryServiceImpl struct {
 	CategoryRepo repository.CategoryRepository
