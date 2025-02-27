@@ -58,3 +58,70 @@
 {"level":"info","msg":"Setting up API routes...","time":"2025-02-26T18:37:29+07:00"}
 {"level":"info","msg":"GetAllCategories endpoint called","time":"2025-02-26T18:37:35+07:00"}
 {"level":"info","msg":"Categories list retrieved successfully","time":"2025-02-26T18:37:35+07:00"}
+{"level":"info","msg":"UpdateProduct endpoint called","time":"2025-02-26T21:17:15+07:00"}
+{"level":"warning","msg":"Invalid product parameters: parsing time \"string\" as \"2006-01-02T15:04:05Z07:00\": cannot parse \"string\" as \"2006\"","time":"2025-02-26T21:17:15+07:00"}
+{"level":"info","msg":"UpdateProduct endpoint called","time":"2025-02-26T21:17:16+07:00"}
+{"level":"warning","msg":"Invalid product parameters: parsing time \"string\" as \"2006-01-02T15:04:05Z07:00\": cannot parse \"string\" as \"2006\"","time":"2025-02-26T21:17:16+07:00"}
+{"level":"info","msg":"UpdateProduct endpoint called","time":"2025-02-26T21:18:58+07:00"}
+{"level":"info","msg":"UpdateProduct endpoint called","time":"2025-02-26T21:19:29+07:00"}
+{"level":"info","msg":"UpdateProduct endpoint called","time":"2025-02-26T21:20:16+07:00"}
+{"level":"info","msg":"GetAllProducts endpoint called","time":"2025-02-26T21:21:38+07:00"}
+{"level":"info","msg":"Product list retrieved successfully","time":"2025-02-26T21:21:38+07:00"}
+{"level":"info","msg":"GetAllProducts endpoint called","time":"2025-02-26T21:22:53+07:00"}
+{"level":"info","msg":"Product list retrieved successfully","time":"2025-02-26T21:22:53+07:00"}
+{"level":"info","msg":"Connecting to database...","time":"2025-02-26T21:33:46+07:00"}
+{"level":"info","msg":"Connect database successfully","time":"2025-02-26T21:33:46+07:00"}
+{"level":"info","msg":"Setting up logging...","time":"2025-02-26T21:33:46+07:00"}
+{"level":"info","msg":"Server initialization complete","time":"2025-02-26T21:33:46+07:00"}
+{"level":"info","msg":"Creating repositories and services...","time":"2025-02-26T21:33:46+07:00"}
+{"level":"info","msg":"Setting up API routes...","time":"2025-02-26T21:33:46+07:00"}
+{"level":"info","msg":"GetProduct endpoint called","time":"2025-02-26T21:37:26+07:00"}
+{"level":"info","msg":"Get a product successfully","time":"2025-02-26T21:37:26+07:00"}
+{"level":"info","msg":"Connecting to database...","time":"2025-02-26T21:40:27+07:00"}
+{"level":"info","msg":"Connect database successfully","time":"2025-02-26T21:40:27+07:00"}
+{"level":"info","msg":"Setting up logging...","time":"2025-02-26T21:40:27+07:00"}
+{"level":"info","msg":"Server initialization complete","time":"2025-02-26T21:40:27+07:00"}
+{"level":"info","msg":"Creating repositories and services...","time":"2025-02-26T21:40:27+07:00"}
+{"level":"info","msg":"Setting up API routes...","time":"2025-02-26T21:40:27+07:00"}
+{"level":"info","msg":"GetProduct endpoint called","time":"2025-02-26T21:40:52+07:00"}
+{"level":"info","msg":"Get a product successfully","time":"2025-02-26T21:40:52+07:00"}
+{"level":"info","msg":"GetProduct endpoint called","time":"2025-02-26T21:41:11+07:00"}
+{"level":"warning","msg":"Product not found: record not found","time":"2025-02-26T21:41:11+07:00"}
+{"level":"info","msg":"GetAllProducts endpoint called","time":"2025-02-26T21:58:57+07:00"}
+{"level":"info","msg":"Product list retrieved successfully","time":"2025-02-26T21:58:57+07:00"}
+{"level":"info","msg":"GetAllProducts endpoint called","time":"2025-02-26T21:58:58+07:00"}
+{"level":"info","msg":"Product list retrieved successfully","time":"2025-02-26T21:58:58+07:00"}
+{"level":"info","msg":"GetAllProducts endpoint called","time":"2025-02-26T21:59:21+07:00"}
+{"level":"info","msg":"Product list retrieved successfully","time":"2025-02-26T21:59:21+07:00"}
+{"level":"info","msg":"GetAllProducts endpoint called","time":"2025-02-26T21:59:22+07:00"}
+{"level":"info","msg":"Product list retrieved successfully","time":"2025-02-26T21:59:22+07:00"}
+{"level":"info","msg":"GetAllProducts endpoint called","time":"2025-02-26T21:59:26+07:00"}
+{"level":"info","msg":"Product list retrieved successfully","time":"2025-02-26T21:59:26+07:00"}
+{"level":"info","msg":"GetAllProducts endpoint called","time":"2025-02-26T21:59:36+07:00"}
+{"level":"info","msg":"Product list retrieved successfully","time":"2025-02-26T21:59:36+07:00"}
+{"level":"info","msg":"GetAllProducts endpoint called","time":"2025-02-26T21:59:46+07:00"}
+{"level":"info","msg":"Product list retrieved successfully","time":"2025-02-26T21:59:46+07:00"}
+{"level":"info","msg":"GetAllProducts endpoint called","time":"2025-02-26T21:59:57+07:00"}
+{"level":"info","msg":"Product list retrieved successfully","time":"2025-02-26T21:59:57+07:00"}
+{"level":"info","msg":"Connecting to database...","time":"2025-02-26T23:29:18+07:00"}
+{"level":"info","msg":"Connect database successfully","time":"2025-02-26T23:29:18+07:00"}
+{"level":"info","msg":"Setting up logging...","time":"2025-02-26T23:29:18+07:00"}
+{"level":"info","msg":"Server initialization complete","time":"2025-02-26T23:29:18+07:00"}
+{"level":"info","msg":"Creating repositories and services...","time":"2025-02-26T23:29:18+07:00"}
+{"level":"info","msg":"Setting up API routes...","time":"2025-02-26T23:29:18+07:00"}
+{"level":"info","msg":"GetAllCategories endpoint called","time":"2025-02-26T23:29:55+07:00"}
+{"level":"info","msg":"Categories list retrieved successfully","time":"2025-02-26T23:29:55+07:00"}
+{"level":"info","msg":"GetAllCategories endpoint called","time":"2025-02-26T23:29:56+07:00"}
+{"level":"info","msg":"Categories list retrieved successfully","time":"2025-02-26T23:29:56+07:00"}
+{"level":"info","msg":"GetAllCategories endpoint called","time":"2025-02-26T23:30:14+07:00"}
+{"level":"info","msg":"Categories list retrieved successfully","time":"2025-02-26T23:30:14+07:00"}
+{"level":"info","msg":"Connecting to database...","time":"2025-02-26T23:32:00+07:00"}
+{"level":"info","msg":"Connect database successfully","time":"2025-02-26T23:32:00+07:00"}
+{"level":"info","msg":"Setting up logging...","time":"2025-02-26T23:32:00+07:00"}
+{"level":"info","msg":"Server initialization complete","time":"2025-02-26T23:32:00+07:00"}
+{"level":"info","msg":"Creating repositories and services...","time":"2025-02-26T23:32:00+07:00"}
+{"level":"info","msg":"Setting up API routes...","time":"2025-02-26T23:32:00+07:00"}
+{"level":"info","msg":"CreateCategory endpoint called","time":"2025-02-26T23:32:09+07:00"}
+{"level":"info","msg":"Category created successfully","time":"2025-02-26T23:32:09+07:00"}
+{"level":"info","msg":"GetAllCategories endpoint called","time":"2025-02-26T23:32:25+07:00"}
+{"level":"info","msg":"Categories list retrieved successfully","time":"2025-02-26T23:32:25+07:00"}

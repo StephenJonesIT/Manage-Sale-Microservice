@@ -132,7 +132,7 @@ func(handler *ProductHandler) CreateProduct(ctx *gin.Context){
 // @Success 200 {object} common.Response
 // @Failure 400 {object} common.AppError
 // @Failure 500 {object} common.AppError
-// @Router /api/product [put]
+// @Router /api/product/{id} [put]
 func (handler *ProductHandler) UpdateProduct(ctx *gin.Context){
     log.Info("UpdateProduct endpoint called")
 
@@ -208,7 +208,7 @@ func (handler *ProductHandler) DeleteProduct(ctx *gin.Context){
 // @Param id path string true "Product ID"
 //  @Success 200 {object} common.Response
 // @Failure 404 {object} common.AppError
-// @Router /product/{id} [get]
+// @Router /api/product/{id} [get]
 func (handler *ProductHandler) GetProduct(ctx *gin.Context) {
     log.Info("GetProduct endpoint called")
 

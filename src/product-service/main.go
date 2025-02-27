@@ -62,7 +62,7 @@ func (m *Main) initServer() error {
 	return nil
 }
 
-func(m *Main) InitializeProductComponents(database *gorm.DB) (*handlers.ProductHandler, error) {
+func(m *Main) initializeProductComponents(database *gorm.DB) (*handlers.ProductHandler, error) {
     log.Info("Creating repositories and services...")
 
     productRepo := repository.NewProductRepository(database)
@@ -99,7 +99,7 @@ func main() {
 		log.Fatal("Database connection is nil")
 	}
 
-	productHandler,_ := m.InitializeProductComponents(database.DB)
+	productHandler,_ := m.initializeProductComponents(database.DB)
 
 	categoryRepo := repository.NewCategoryRepository(database.DB)
 	categoryService := business.NewCategoryService(categoryRepo)
@@ -116,9 +116,12 @@ func main() {
 		api.GET("/products", productHandler.GetAllProducts)
 		api.GET("/product/:id", productHandler.GetProduct)
 		api.POST("/product", productHandler.CreateProduct)
-		api.PUT("/product", productHandler.UpdateProduct)
+		api.PUT("/product/:id", productHandler.UpdateProduct)
 		api.DELETE("/product/:id", productHandler.DeleteProduct)
+
 		api.GET("/categories", categoryHandler.GetAllCategories)
+		api.POST("/category", categoryHandler.CreateCategory)
+		api.PUT("/category/:id", )
 	}
 
 	err = m.router.Run(common.Config.Port)

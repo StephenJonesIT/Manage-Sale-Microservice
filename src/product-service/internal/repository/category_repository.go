@@ -78,14 +78,52 @@ func(repo *CategoryRepositoryImpl) GetAll(
 func(repo *CategoryRepositoryImpl) GetByID(
 	id interface{},
 ) (*models.Category, error){
-	return nil, nil
+	var result models.Category
+
+	if err :=  repo.DB.First(&result, id).Error; err != nil{
+		if errors.Is(err, gorm.ErrRecordNotFound) {
+			return nil, common.NewAppError(
+				http.StatusNotFound,
+				err,
+				"Category not found",
+				"CATEGORY_NOT_FOUND",
+				"The category with the given ID doesn't exists",
+			)
+		}
+		return nil, common.NewAppError(
+			http.StatusInternalServerError,
+			err,
+			"Error retrieve category",
+			"Database error while retrieving category",
+			"INTERNAL_SERVER_ERROR",
+		)
+	}
+	return &result, nil
 }
 
 func(repo *CategoryRepositoryImpl) Create(item *models.AddCategory) error{
+	if err := repo.DB.Create(item).Error; err != nil {
+		return common.NewAppError(
+			http.StatusInternalServerError, 
+			err,
+			"Failed to create product",
+            "Database error while creating product",
+            "INTERNAL_SERVER_ERROR", 
+		)
+	}
 	return nil
 }
 
 func(repo *CategoryRepositoryImpl) Update(item *models.Category) error {
+	if err := repo.DB.Save(item).Error; err != nil{
+		return common.NewAppError(
+			http.StatusInternalServerError,
+			err,
+			"Fail to update category",
+			"Database error while updating category",
+			"INTERNAL_SERVER_ERROR",
+		)
+	}
 	return nil
 }
 	
