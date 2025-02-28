@@ -1,3 +1,8 @@
+/*
+* @File: business.product_service.go
+* @Description: Implements Supplier CRUD functions for SupplierService
+* @Author: Tran Thanh Sang (tranthanhsang.it.la@gmail.com)
+*/
 package business
 
 import (

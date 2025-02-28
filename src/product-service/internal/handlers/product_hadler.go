@@ -1,3 +1,8 @@
+/*
+ * @File: handlers.product_handler.go
+ * @Description: Implements Product API logic functions
+ * @Author: Tran Thanh Sang (tranthanhsang.it.la@gmail.com)
+ */
 package handlers
 
 import (

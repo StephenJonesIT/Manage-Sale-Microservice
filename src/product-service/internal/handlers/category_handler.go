@@ -1,3 +1,8 @@
+/*
+ * @File: handlers.category_handler.go
+ * @Description: Implements Category API logic functions
+ * @Author: Tran Thanh Sang (tranthanhsang.it.la@gmail.com)
+ */
 package handlers
 
 import (

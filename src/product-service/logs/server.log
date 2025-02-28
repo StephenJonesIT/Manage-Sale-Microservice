@@ -248,3 +248,9 @@
 {"level":"info","msg":"Server initialization complete","time":"2025-02-28T22:47:47+07:00"}
 {"level":"info","msg":"Creating repositories and services...","time":"2025-02-28T22:47:47+07:00"}
 {"level":"info","msg":"Setting up API routes...","time":"2025-02-28T22:47:47+07:00"}
+{"level":"info","msg":"Connecting to database...","time":"2025-03-01T00:46:22+07:00"}
+{"level":"info","msg":"Connect database successfully","time":"2025-03-01T00:46:22+07:00"}
+{"level":"info","msg":"Setting up logging...","time":"2025-03-01T00:46:22+07:00"}
+{"level":"info","msg":"Server initialization complete","time":"2025-03-01T00:46:22+07:00"}
+{"level":"info","msg":"Creating repositories and services...","time":"2025-03-01T00:46:22+07:00"}
+{"level":"info","msg":"Setting up API routes...","time":"2025-03-01T00:46:22+07:00"}

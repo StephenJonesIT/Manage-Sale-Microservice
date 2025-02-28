@@ -109,6 +109,10 @@ func main() {
 	supplierService := business.NewSupplierService(supplierRepo)
 	supplierHandler := handlers.NewSupplierHandler(supplierService)
 
+	warehouseRepo := repository.NewWarehouseRepository(database.DB)
+	warehouseService := business.NewWarehouseService(warehouseRepo)
+	warehouseHandler := handlers.NewWarehouseHandler(warehouseService)
+
 	log.Info("Setting up API routes...")
 
 	m.router.GET("/swagger/*any", func(c *gin.Context) {
@@ -134,6 +138,12 @@ func main() {
 		api.POST("/supplier", supplierHandler.CreateSupplier)
 		api.PUT("/supplier/:id", supplierHandler.UpdateSupplier)
 		api.DELETE("/supplier/:id", supplierHandler.DeleteSupplier)
+
+		api.GET("/warehouses", warehouseHandler.GetAllWarehouses)
+		api.GET("/warehouse/:id", warehouseHandler.GetWarehouse)
+		api.POST("/warehouse", warehouseHandler.CreateWarehouses)
+		api.PUT("/warehouse/:id", warehouseHandler.UpdateWarehouses)
+		api.DELETE("/warehouse/:id", warehouseHandler.DeleteWarehouse)
 	}
 
 	err = m.router.Run(common.Config.Port)
