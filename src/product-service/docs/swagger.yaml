@@ -26,6 +26,21 @@ definitions:
       description:
         type: string
     type: object
+  models.AddSupplier:
+    properties:
+      address:
+        type: string
+      city:
+        type: string
+      country:
+        type: string
+      email:
+        type: string
+      phone:
+        type: string
+      supplier_name:
+        type: string
+    type: object
   models.Category:
     properties:
       category_id:
@@ -88,6 +103,23 @@ definitions:
     - NewArrival
     - Damaged
     - Pending
+  models.UpdateSupplier:
+    properties:
+      address:
+        type: string
+      city:
+        type: string
+      country:
+        type: string
+      email:
+        type: string
+      phone:
+        type: string
+      supplier_id:
+        type: integer
+      supplier_name:
+        type: string
+    type: object
 info:
   contact: {}
 paths:
@@ -381,4 +413,150 @@ paths:
       summary: Retrieve a list of products
       tags:
       - products
+  /api/supplier:
+    post:
+      consumes:
+      - application/json
+      description: Create a new supplier with the provided parameters
+      parameters:
+      - description: Supplier to create
+        in: body
+        name: Supplier
+        required: true
+        schema:
+          $ref: '#/definitions/models.AddSupplier'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/common.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/common.AppError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/common.AppError'
+      summary: Create a new Supplier
+      tags:
+      - suppliers
+  /api/supplier/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: Delete a Supplier by id
+      parameters:
+      - description: Supplier ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/common.Response'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/common.AppError'
+      summary: Deleted a Supplier
+      tags:
+      - suppliers
+    get:
+      consumes:
+      - application/json
+      description: Get a Supplier by id
+      parameters:
+      - description: Supplier ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/common.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/common.AppError'
+      summary: Get a Supplier
+      tags:
+      - suppliers
+    put:
+      consumes:
+      - application/json
+      description: Update an existing Supplier with the provided parameters
+      parameters:
+      - description: Supplier to update
+        in: body
+        name: Supplier
+        required: true
+        schema:
+          $ref: '#/definitions/models.UpdateSupplier'
+      - description: Supplier ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/common.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/common.AppError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/common.AppError'
+      summary: Update an existing Supplier
+      tags:
+      - suppliers
+  /api/suppliers:
+    get:
+      consumes:
+      - application/json
+      description: Retrieve all products, with optional paging
+      parameters:
+      - in: query
+        name: limit
+        type: integer
+      - in: query
+        name: page
+        type: integer
+      - in: query
+        name: '-'
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/common.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/common.AppError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/common.AppError'
+      summary: Retrieve a list of Suppliers
+      tags:
+      - suppliers
 swagger: "2.0"

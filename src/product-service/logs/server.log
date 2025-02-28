@@ -194,3 +194,57 @@
 {"level":"info","msg":"Server initialization complete","time":"2025-02-27T23:35:25+07:00"}
 {"level":"info","msg":"Creating repositories and services...","time":"2025-02-27T23:35:25+07:00"}
 {"level":"info","msg":"Setting up API routes...","time":"2025-02-27T23:35:25+07:00"}
+{"level":"info","msg":"Connecting to database...","time":"2025-02-28T22:28:51+07:00"}
+{"level":"info","msg":"Connect database successfully","time":"2025-02-28T22:28:51+07:00"}
+{"level":"info","msg":"Setting up logging...","time":"2025-02-28T22:28:51+07:00"}
+{"level":"info","msg":"Server initialization complete","time":"2025-02-28T22:28:51+07:00"}
+{"level":"info","msg":"Creating repositories and services...","time":"2025-02-28T22:28:51+07:00"}
+{"level":"info","msg":"Setting up API routes...","time":"2025-02-28T22:28:51+07:00"}
+{"level":"info","msg":"Connecting to database...","time":"2025-02-28T22:30:52+07:00"}
+{"level":"info","msg":"Connect database successfully","time":"2025-02-28T22:30:52+07:00"}
+{"level":"info","msg":"Setting up logging...","time":"2025-02-28T22:30:52+07:00"}
+{"level":"info","msg":"Server initialization complete","time":"2025-02-28T22:30:52+07:00"}
+{"level":"info","msg":"Creating repositories and services...","time":"2025-02-28T22:30:52+07:00"}
+{"level":"info","msg":"Setting up API routes...","time":"2025-02-28T22:30:52+07:00"}
+{"level":"info","msg":"GetAllProducts endpoint called","time":"2025-02-28T22:32:47+07:00"}
+{"level":"info","msg":"Product list retrieved successfully","time":"2025-02-28T22:32:47+07:00"}
+{"level":"info","msg":"GetAllSuppliers endpoint called","time":"2025-02-28T22:33:11+07:00"}
+{"level":"info","msg":"suppliers list retrieved successfully","time":"2025-02-28T22:33:11+07:00"}
+{"level":"info","msg":"Connecting to database...","time":"2025-02-28T22:39:14+07:00"}
+{"level":"info","msg":"Connect database successfully","time":"2025-02-28T22:39:14+07:00"}
+{"level":"info","msg":"Setting up logging...","time":"2025-02-28T22:39:14+07:00"}
+{"level":"info","msg":"Server initialization complete","time":"2025-02-28T22:39:14+07:00"}
+{"level":"info","msg":"Creating repositories and services...","time":"2025-02-28T22:39:14+07:00"}
+{"level":"info","msg":"Setting up API routes...","time":"2025-02-28T22:39:14+07:00"}
+{"level":"info","msg":"Connecting to database...","time":"2025-02-28T22:39:46+07:00"}
+{"level":"info","msg":"Connect database successfully","time":"2025-02-28T22:39:46+07:00"}
+{"level":"info","msg":"Setting up logging...","time":"2025-02-28T22:39:46+07:00"}
+{"level":"info","msg":"Server initialization complete","time":"2025-02-28T22:39:46+07:00"}
+{"level":"info","msg":"Creating repositories and services...","time":"2025-02-28T22:39:46+07:00"}
+{"level":"info","msg":"Setting up API routes...","time":"2025-02-28T22:39:46+07:00"}
+{"level":"info","msg":"Connecting to database...","time":"2025-02-28T22:40:33+07:00"}
+{"level":"info","msg":"Connect database successfully","time":"2025-02-28T22:40:33+07:00"}
+{"level":"info","msg":"Setting up logging...","time":"2025-02-28T22:40:33+07:00"}
+{"level":"info","msg":"Server initialization complete","time":"2025-02-28T22:40:33+07:00"}
+{"level":"info","msg":"Creating repositories and services...","time":"2025-02-28T22:40:33+07:00"}
+{"level":"info","msg":"Setting up API routes...","time":"2025-02-28T22:40:33+07:00"}
+{"level":"info","msg":"CreateSupplier endpoint called","time":"2025-02-28T22:42:42+07:00"}
+{"level":"error","msg":"Failed to create Supplier: unsupported data type: gorm.io/gorm/schema.Namer: Table not set, please set it like: db.Model(\u0026user) or db.Table(\"users\")","time":"2025-02-28T22:42:42+07:00"}
+{"level":"info","msg":"Connecting to database...","time":"2025-02-28T22:43:26+07:00"}
+{"level":"info","msg":"Connect database successfully","time":"2025-02-28T22:43:26+07:00"}
+{"level":"info","msg":"Setting up logging...","time":"2025-02-28T22:43:26+07:00"}
+{"level":"info","msg":"Server initialization complete","time":"2025-02-28T22:43:26+07:00"}
+{"level":"info","msg":"Creating repositories and services...","time":"2025-02-28T22:43:26+07:00"}
+{"level":"info","msg":"Setting up API routes...","time":"2025-02-28T22:43:26+07:00"}
+{"level":"info","msg":"CreateSupplier endpoint called","time":"2025-02-28T22:43:33+07:00"}
+{"level":"info","msg":"Supplier created successfully","time":"2025-02-28T22:43:33+07:00"}
+{"level":"info","msg":"GetAllSuppliers endpoint called","time":"2025-02-28T22:43:43+07:00"}
+{"level":"info","msg":"suppliers list retrieved successfully","time":"2025-02-28T22:43:43+07:00"}
+{"level":"info","msg":"GetAllSuppliers endpoint called","time":"2025-02-28T22:44:51+07:00"}
+{"level":"info","msg":"suppliers list retrieved successfully","time":"2025-02-28T22:44:51+07:00"}
+{"level":"info","msg":"Connecting to database...","time":"2025-02-28T22:47:47+07:00"}
+{"level":"info","msg":"Connect database successfully","time":"2025-02-28T22:47:47+07:00"}
+{"level":"info","msg":"Setting up logging...","time":"2025-02-28T22:47:47+07:00"}
+{"level":"info","msg":"Server initialization complete","time":"2025-02-28T22:47:47+07:00"}
+{"level":"info","msg":"Creating repositories and services...","time":"2025-02-28T22:47:47+07:00"}
+{"level":"info","msg":"Setting up API routes...","time":"2025-02-28T22:47:47+07:00"}

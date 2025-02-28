@@ -15,22 +15,13 @@
 [GIN-debug] PUT    /api/category/:id         --> product-service/internal/handlers.(*CategoryHandler).UpdateCategory-fm (5 handlers)
 [GIN-debug] DELETE /api/category/:id         --> product-service/internal/handlers.(*CategoryHandler).DeleteCategory-fm (5 handlers)
 [GIN-debug] GET    /api/category/:id         --> product-service/internal/handlers.(*CategoryHandler).GetCategory-fm (5 handlers)
+[GIN-debug] GET    /api/suppliers            --> product-service/internal/handlers.(*SupplierHandler).GetAllSuppliers-fm (5 handlers)
+[GIN-debug] GET    /api/supplier/:id         --> product-service/internal/handlers.(*SupplierHandler).GetSupplier-fm (5 handlers)
+[GIN-debug] POST   /api/supplier             --> product-service/internal/handlers.(*SupplierHandler).CreateSupplier-fm (5 handlers)
+[GIN-debug] PUT    /api/supplier/:id         --> product-service/internal/handlers.(*SupplierHandler).UpdateSupplier-fm (5 handlers)
+[GIN-debug] DELETE /api/supplier/:id         --> product-service/internal/handlers.(*SupplierHandler).DeleteSupplier-fm (5 handlers)
 [GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
 Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
 [GIN-debug] Listening and serving HTTP on :8810
-[GIN] 2025/02/27 - 23:35:33 | 200 |            0s |       127.0.0.1 | GET      "/swagger/index.html"
-[GIN] 2025/02/27 - 23:35:33 | 200 |       538.6µs |       127.0.0.1 | GET      "/swagger/index.html"
-[GIN] 2025/02/27 - 23:35:33 | 200 |            0s |       127.0.0.1 | GET      "/swagger/swagger-ui.css"
-[GIN] 2025/02/27 - 23:35:33 | 200 |            0s |       127.0.0.1 | GET      "/swagger/swagger-ui.css"
-[GIN] 2025/02/27 - 23:35:33 | 200 |       528.9µs |       127.0.0.1 | GET      "/swagger/swagger-ui-standalone-preset.js"
-[GIN] 2025/02/27 - 23:35:33 | 200 |       528.9µs |       127.0.0.1 | GET      "/swagger/swagger-ui-standalone-preset.js"
-[GIN] 2025/02/27 - 23:35:33 | 200 |      3.4474ms |       127.0.0.1 | GET      "/swagger/swagger-ui-bundle.js"
-[GIN] 2025/02/27 - 23:35:33 | 200 |      3.4474ms |       127.0.0.1 | GET      "/swagger/swagger-ui-bundle.js"
-[GIN] 2025/02/27 - 23:35:33 | 200 |       923.9µs |       127.0.0.1 | GET      "/swagger/doc.json"
-[GIN] 2025/02/27 - 23:35:33 | 200 |       923.9µs |       127.0.0.1 | GET      "/swagger/doc.json"
-[GIN] 2025/02/27 - 23:35:33 | 200 |            0s |       127.0.0.1 | GET      "/swagger/favicon-32x32.png"
-[GIN] 2025/02/27 - 23:35:33 | 200 |            0s |       127.0.0.1 | GET      "/swagger/favicon-32x32.png"
-[GIN] 2025/02/27 - 23:35:48 | 200 |       700.7µs |       127.0.0.1 | GET      "/api/category/1"
-[GIN] 2025/02/27 - 23:35:48 | 200 |       700.7µs |       127.0.0.1 | GET      "/api/category/1"
-[GIN] 2025/02/27 - 23:36:04 | 400 |            0s |       127.0.0.1 | GET      "/api/category/a"
-[GIN] 2025/02/27 - 23:36:04 | 400 |            0s |       127.0.0.1 | GET      "/api/category/a"
+[GIN] 2025/02/28 - 22:47:52 | 500 |      1.7425ms |       127.0.0.1 | DELETE   "/api/supplier/2"
+[GIN] 2025/02/28 - 22:47:52 | 500 |      1.7425ms |       127.0.0.1 | DELETE   "/api/supplier/2"
