@@ -254,3 +254,91 @@
 {"level":"info","msg":"Server initialization complete","time":"2025-03-01T00:46:22+07:00"}
 {"level":"info","msg":"Creating repositories and services...","time":"2025-03-01T00:46:22+07:00"}
 {"level":"info","msg":"Setting up API routes...","time":"2025-03-01T00:46:22+07:00"}
+{"level":"info","msg":"Connecting to database...","time":"2025-03-01T23:16:32+07:00"}
+{"level":"info","msg":"Connect database successfully","time":"2025-03-01T23:16:32+07:00"}
+{"level":"info","msg":"Setting up logging...","time":"2025-03-01T23:16:32+07:00"}
+{"level":"info","msg":"Server initialization complete","time":"2025-03-01T23:16:32+07:00"}
+{"level":"info","msg":"Creating repositories and services...","time":"2025-03-01T23:16:32+07:00"}
+{"level":"info","msg":"Setting up API routes...","time":"2025-03-01T23:16:32+07:00"}
+{"level":"info","msg":"Connecting to database...","time":"2025-03-01T23:18:04+07:00"}
+{"level":"info","msg":"Connect database successfully","time":"2025-03-01T23:18:04+07:00"}
+{"level":"info","msg":"Setting up logging...","time":"2025-03-01T23:18:04+07:00"}
+{"level":"info","msg":"Server initialization complete","time":"2025-03-01T23:18:04+07:00"}
+{"level":"info","msg":"Creating repositories and services...","time":"2025-03-01T23:18:04+07:00"}
+{"level":"info","msg":"Setting up API routes...","time":"2025-03-01T23:18:04+07:00"}
+{"level":"info","msg":"GetAllProducts endpoint called","time":"2025-03-01T23:19:22+07:00"}
+{"level":"info","msg":"Product warehouses list retrieved successfully","time":"2025-03-01T23:19:22+07:00"}
+{"level":"info","msg":"Connecting to database...","time":"2025-03-01T23:20:58+07:00"}
+{"level":"info","msg":"Connect database successfully","time":"2025-03-01T23:20:58+07:00"}
+{"level":"info","msg":"Setting up logging...","time":"2025-03-01T23:20:58+07:00"}
+{"level":"info","msg":"Server initialization complete","time":"2025-03-01T23:20:58+07:00"}
+{"level":"info","msg":"Creating repositories and services...","time":"2025-03-01T23:20:58+07:00"}
+{"level":"info","msg":"Setting up API routes...","time":"2025-03-01T23:20:58+07:00"}
+{"level":"info","msg":"GetProductWarehouse endpoint called","time":"2025-03-01T23:21:24+07:00"}
+{"level":"info","msg":"Get a product warehouse successfully","time":"2025-03-01T23:21:24+07:00"}
+{"level":"info","msg":"CreateWarehouse endpoint called","time":"2025-03-01T23:22:14+07:00"}
+{"level":"info","msg":"Warehouses created successfully","time":"2025-03-01T23:22:14+07:00"}
+{"level":"info","msg":"UpdateProductWarehouse endpoint called","time":"2025-03-01T23:22:56+07:00"}
+{"level":"warning","msg":"Invalid product warehouse parameters: parsing time \"string\" as \"2006-01-02T15:04:05Z07:00\": cannot parse \"string\" as \"2006\"","time":"2025-03-01T23:22:56+07:00"}
+{"level":"info","msg":"UpdateProductWarehouse endpoint called","time":"2025-03-01T23:23:11+07:00"}
+{"level":"warning","msg":"Invalid product warehouse parameters: parsing time \" \" as \"2006-01-02T15:04:05Z07:00\": cannot parse \" \" as \"2006\"","time":"2025-03-01T23:23:11+07:00"}
+{"level":"info","msg":"UpdateProductWarehouse endpoint called","time":"2025-03-01T23:23:33+07:00"}
+{"level":"error","msg":"Failed to update product: Error 1054 (42S22): Unknown column 'warehouse' in 'where clause'","time":"2025-03-01T23:23:33+07:00"}
+{"level":"info","msg":"Connecting to database...","time":"2025-03-01T23:24:17+07:00"}
+{"level":"info","msg":"Connect database successfully","time":"2025-03-01T23:24:17+07:00"}
+{"level":"info","msg":"Setting up logging...","time":"2025-03-01T23:24:17+07:00"}
+{"level":"info","msg":"Server initialization complete","time":"2025-03-01T23:24:17+07:00"}
+{"level":"info","msg":"Creating repositories and services...","time":"2025-03-01T23:24:17+07:00"}
+{"level":"info","msg":"Setting up API routes...","time":"2025-03-01T23:24:17+07:00"}
+{"level":"info","msg":"UpdateProductWarehouse endpoint called","time":"2025-03-01T23:24:21+07:00"}
+{"level":"info","msg":"Product warehouse updated successfully","time":"2025-03-01T23:24:21+07:00"}
+{"level":"info","msg":"GetAllProducts endpoint called","time":"2025-03-01T23:24:41+07:00"}
+{"level":"info","msg":"Product warehouses list retrieved successfully","time":"2025-03-01T23:24:41+07:00"}
+{"level":"info","msg":"CreateProduct endpoint called","time":"2025-03-01T23:25:41+07:00"}
+{"level":"error","msg":"Failed to create product warehouse: Error 1452 (23000): Cannot add or update a child row: a foreign key constraint fails (`products_service`.`product_warehouse`, CONSTRAINT `product_warehouse_ibfk_1` FOREIGN KEY (`product_id`) REFERENCES `products` (`product_id`) ON DELETE CASCADE)","time":"2025-03-01T23:25:41+07:00"}
+{"level":"info","msg":"GetAllWarehouses endpoint called","time":"2025-03-01T23:27:16+07:00"}
+{"level":"info","msg":"Warehouses list retrieved successfully","time":"2025-03-01T23:27:16+07:00"}
+{"level":"info","msg":"CreateProduct endpoint called","time":"2025-03-01T23:28:14+07:00"}
+{"level":"info","msg":"Product warehouse created successfully","time":"2025-03-01T23:28:14+07:00"}
+{"level":"info","msg":"GetAllProducts endpoint called","time":"2025-03-01T23:28:30+07:00"}
+{"level":"info","msg":"Product warehouses list retrieved successfully","time":"2025-03-01T23:28:30+07:00"}
+{"level":"info","msg":"Connecting to database...","time":"2025-03-01T23:29:50+07:00"}
+{"level":"info","msg":"Connect database successfully","time":"2025-03-01T23:29:50+07:00"}
+{"level":"info","msg":"Setting up logging...","time":"2025-03-01T23:29:50+07:00"}
+{"level":"info","msg":"Server initialization complete","time":"2025-03-01T23:29:50+07:00"}
+{"level":"info","msg":"Creating repositories and services...","time":"2025-03-01T23:29:50+07:00"}
+{"level":"info","msg":"Setting up API routes...","time":"2025-03-01T23:29:50+07:00"}
+{"level":"info","msg":"DeleteProduct endpoint called","time":"2025-03-01T23:29:56+07:00"}
+{"level":"warning","msg":"Product warehouse not found: record not found","time":"2025-03-01T23:29:56+07:00"}
+{"level":"info","msg":"DeleteProduct endpoint called","time":"2025-03-01T23:30:26+07:00"}
+{"level":"warning","msg":"Product warehouse not found: record not found","time":"2025-03-01T23:30:26+07:00"}
+{"level":"info","msg":"DeleteProduct endpoint called","time":"2025-03-01T23:30:34+07:00"}
+{"level":"warning","msg":"Product warehouse not found: record not found","time":"2025-03-01T23:30:34+07:00"}
+{"level":"info","msg":"DeleteProduct endpoint called","time":"2025-03-01T23:31:09+07:00"}
+{"level":"error","msg":"Failed to delete product warehouse: WHERE conditions required","time":"2025-03-01T23:31:09+07:00"}
+{"level":"info","msg":"Connecting to database...","time":"2025-03-01T23:34:31+07:00"}
+{"level":"info","msg":"Connect database successfully","time":"2025-03-01T23:34:31+07:00"}
+{"level":"info","msg":"Setting up logging...","time":"2025-03-01T23:34:31+07:00"}
+{"level":"info","msg":"Server initialization complete","time":"2025-03-01T23:34:31+07:00"}
+{"level":"info","msg":"Creating repositories and services...","time":"2025-03-01T23:34:31+07:00"}
+{"level":"info","msg":"Setting up API routes...","time":"2025-03-01T23:34:31+07:00"}
+{"level":"info","msg":"DeleteProduct endpoint called","time":"2025-03-01T23:34:44+07:00"}
+{"level":"error","msg":"Failed to delete product warehouse: unsupported data type: product_warehouse: Table not set, please set it like: db.Model(\u0026user) or db.Table(\"users\")","time":"2025-03-01T23:34:44+07:00"}
+{"level":"info","msg":"GetAllProducts endpoint called","time":"2025-03-01T23:34:54+07:00"}
+{"level":"info","msg":"Product warehouses list retrieved successfully","time":"2025-03-01T23:34:54+07:00"}
+{"level":"info","msg":"DeleteProduct endpoint called","time":"2025-03-01T23:35:09+07:00"}
+{"level":"error","msg":"Failed to delete product warehouse: unsupported data type: product_warehouse: Table not set, please set it like: db.Model(\u0026user) or db.Table(\"users\")","time":"2025-03-01T23:35:09+07:00"}
+{"level":"info","msg":"DeleteProduct endpoint called","time":"2025-03-01T23:36:02+07:00"}
+{"level":"error","msg":"Failed to delete product warehouse: unsupported data type: product_warehouse: Table not set, please set it like: db.Model(\u0026user) or db.Table(\"users\")","time":"2025-03-01T23:36:02+07:00"}
+{"level":"info","msg":"DeleteProduct endpoint called","time":"2025-03-01T23:36:03+07:00"}
+{"level":"error","msg":"Failed to delete product warehouse: unsupported data type: product_warehouse: Table not set, please set it like: db.Model(\u0026user) or db.Table(\"users\")","time":"2025-03-01T23:36:03+07:00"}
+{"level":"info","msg":"GetProductWarehouse endpoint called","time":"2025-03-01T23:36:45+07:00"}
+{"level":"info","msg":"Get a product warehouse successfully","time":"2025-03-01T23:36:45+07:00"}
+{"level":"info","msg":"Connecting to database...","time":"2025-03-01T23:37:45+07:00"}
+{"level":"info","msg":"Connect database successfully","time":"2025-03-01T23:37:45+07:00"}
+{"level":"info","msg":"Setting up logging...","time":"2025-03-01T23:37:45+07:00"}
+{"level":"info","msg":"Server initialization complete","time":"2025-03-01T23:37:45+07:00"}
+{"level":"info","msg":"Creating repositories and services...","time":"2025-03-01T23:37:45+07:00"}
+{"level":"info","msg":"Setting up API routes...","time":"2025-03-01T23:37:45+07:00"}
+{"level":"info","msg":"DeleteProduct endpoint called","time":"2025-03-01T23:37:55+07:00"}
+{"level":"error","msg":"Failed to delete product warehouse: unsupported data type: product_warehouse: Table not set, please set it like: db.Model(\u0026user) or db.Table(\"users\")","time":"2025-03-01T23:37:55+07:00"}
