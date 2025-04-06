@@ -1403,3 +1403,23 @@
 {"level":"info","msg":"Setting up API routes...","time":"2025-04-07T00:03:04+07:00"}
 {"level":"info","msg":"GetAllTransactions endpoint called","time":"2025-04-07T00:03:25+07:00"}
 {"level":"info","msg":"Transactions list retrieved successfully","time":"2025-04-07T00:03:25+07:00"}
+{"level":"info","msg":"Connecting to database...","time":"2025-04-07T00:45:34+07:00"}
+{"level":"info","msg":"Connect database successfully","time":"2025-04-07T00:45:34+07:00"}
+{"level":"info","msg":"Setting up logging...","time":"2025-04-07T00:45:34+07:00"}
+{"level":"info","msg":"Server initialization complete","time":"2025-04-07T00:45:34+07:00"}
+{"level":"info","msg":"Creating repositories and services...","time":"2025-04-07T00:45:34+07:00"}
+{"level":"info","msg":"Setting up API routes...","time":"2025-04-07T00:45:34+07:00"}
+{"level":"info","msg":"GetAllProducts endpoint called","time":"2025-04-07T00:45:42+07:00"}
+{"level":"info","msg":"Product list retrieved successfully","time":"2025-04-07T00:45:42+07:00"}
+{"level":"info","msg":"Connecting to database...","time":"2025-04-07T01:22:19+07:00"}
+{"level":"info","msg":"Connect database successfully","time":"2025-04-07T01:22:19+07:00"}
+{"level":"info","msg":"Setting up logging...","time":"2025-04-07T01:22:19+07:00"}
+{"level":"info","msg":"Server initialization complete","time":"2025-04-07T01:22:19+07:00"}
+{"level":"info","msg":"Creating repositories and services...","time":"2025-04-07T01:22:19+07:00"}
+{"level":"info","msg":"Setting up API routes...","time":"2025-04-07T01:22:19+07:00"}
+{"level":"info","msg":"Connecting to database...","time":"2025-04-07T01:22:42+07:00"}
+{"level":"info","msg":"Connect database successfully","time":"2025-04-07T01:22:42+07:00"}
+{"level":"info","msg":"Setting up logging...","time":"2025-04-07T01:22:42+07:00"}
+{"level":"info","msg":"Server initialization complete","time":"2025-04-07T01:22:42+07:00"}
+{"level":"info","msg":"Creating repositories and services...","time":"2025-04-07T01:22:42+07:00"}
+{"level":"info","msg":"Setting up API routes...","time":"2025-04-07T01:22:42+07:00"}

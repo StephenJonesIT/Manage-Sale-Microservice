@@ -9,7 +9,7 @@
     "mgAddrs": "42.112.30.39:3306",
     "mgDbName": "skgamebmhszt_manage_stock",
     "mgUsername": "skgamebmhszt_root",
-    "mgDbPassword": "1010970549@Ab",
+    "mgDbPassword": "1010970549abcABC",
     "jwtSecretPassword": "supersecretkey",
     "isser": "myapp"
 }
