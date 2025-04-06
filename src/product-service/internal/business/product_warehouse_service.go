@@ -4,6 +4,7 @@
 package business
 
 import (
+	"context"
 	"product-service/common"
 	"product-service/internal/models"
 	"product-service/internal/repository"
@@ -12,9 +13,9 @@ import (
 type ProductWarehouseService interface {
 	GetAllProductWarehouses(paging *common.Paging) ([]models.ProductWarehouses, error)
 	GetProductWarehouse(idProduct, idWarehouse interface{}) (*models.ProductWarehouses, error)
-	CreateProductWarehouse(item *models.ProductWarehouses) error
-	UpdateProductWarehouse(item *models.ProductWarehouses) error
-	DeleteProductWarehouse(item *models.ProductWarehouses) error
+	CreateProductWarehouse(ctx context.Context,item *models.ProductWarehouses) error
+	UpdateProductWarehouse(ctx context.Context,item *models.ProductWarehouses) error
+	DeleteProductWarehouse(idProduct, idWarehouse interface{}) error
 }
 
 type ProductWarehouseServiceImpl struct {
@@ -33,14 +34,14 @@ func(biz *ProductWarehouseServiceImpl) GetProductWarehouse(idProduct, idWarehous
 	return biz.service.GetByID(idProduct,idWarehouse)
 }
 
-func(biz *ProductWarehouseServiceImpl) CreateProductWarehouse(item *models.ProductWarehouses) error {
-	return biz.service.Create(item)
+func(biz *ProductWarehouseServiceImpl) CreateProductWarehouse(ctx context.Context,item *models.ProductWarehouses) error {
+	return biz.service.Create(ctx,item)
 }
 
-func(biz *ProductWarehouseServiceImpl) UpdateProductWarehouse(item *models.ProductWarehouses) error {
-	return biz.service.Update(item)
+func(biz *ProductWarehouseServiceImpl) UpdateProductWarehouse(ctx context.Context,item *models.ProductWarehouses) error {
+	return biz.service.Update(ctx,item)
 }
 
-func(biz *ProductWarehouseServiceImpl) DeleteProductWarehouse(item *models.ProductWarehouses) error{
-	return biz.service.Delete(item)
+func(biz *ProductWarehouseServiceImpl) DeleteProductWarehouse(idProduct, idWarehouse interface{}) error{
+	return biz.service.Delete(idProduct, idWarehouse)
 }

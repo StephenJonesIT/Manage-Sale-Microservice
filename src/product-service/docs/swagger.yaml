@@ -10,6 +10,11 @@ definitions:
       status_code:
         type: integer
     type: object
+  common.ErrorResponse:
+    properties:
+      message:
+        type: string
+    type: object
   common.Response:
     properties:
       code:
@@ -50,10 +55,25 @@ definitions:
       description:
         type: string
     type: object
+  models.InventoryTransaction:
+    properties:
+      product_id:
+        type: string
+      quantity:
+        type: integer
+      transaction_date:
+        type: string
+      transaction_id:
+        type: string
+      transaction_type:
+        $ref: '#/definitions/models.Type'
+      warehouse_id:
+        type: integer
+    type: object
   models.Product:
     properties:
       category_id:
-        type: string
+        type: integer
       create_at:
         type: string
       description:
@@ -73,7 +93,7 @@ definitions:
       status:
         $ref: '#/definitions/models.Status'
       supplier_id:
-        type: string
+        type: integer
       unit:
         type: string
       update_at:
@@ -114,6 +134,17 @@ definitions:
     - NewArrival
     - Damaged
     - Pending
+  models.Type:
+    enum:
+    - 0
+    - 1
+    type: integer
+    x-enum-comments:
+      In: "0"
+      Out: "1"
+    x-enum-varnames:
+    - In
+    - Out
   models.UpdateSupplier:
     properties:
       address:
@@ -133,11 +164,11 @@ definitions:
     type: object
   models.Warehouses:
     properties:
-      Location:
+      location:
         type: string
-      Warehouse_ID:
+      warehouse_id:
         type: integer
-      Warehouse_Name:
+      warehouse_name:
         type: string
     type: object
 info:
@@ -730,6 +761,94 @@ paths:
       summary: Retrieve a list of Suppliers
       tags:
       - suppliers
+  /api/transaction:
+    post:
+      consumes:
+      - application/json
+      description: Create a new inventory  with the provided parameters
+      parameters:
+      - description: Inventory to create
+        in: body
+        name: inventoryData
+        required: true
+        schema:
+          $ref: '#/definitions/models.InventoryTransaction'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/common.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/common.AppError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/common.ErrorResponse'
+      summary: Create a new inventory
+      tags:
+      - transactions
+  /api/transaction/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: Delete a inventory transaction by id
+      parameters:
+      - description: Transaction ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/common.Response'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/common.ErrorResponse'
+      summary: Deleted a inventory transaction
+      tags:
+      - transactions
+  /api/transactions:
+    get:
+      consumes:
+      - application/json
+      description: Retrieve all inventory , with optional paging
+      parameters:
+      - in: query
+        name: limit
+        type: integer
+      - in: query
+        name: page
+        type: integer
+      - in: query
+        name: '-'
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/common.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/common.AppError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/common.ErrorResponse'
+      summary: Retrieve a list of inventory
+      tags:
+      - transactions
   /api/warehouse:
     post:
       consumes:

@@ -43,7 +43,7 @@ func (status *Status) String() string {
 	return allProductStatuses[*status]
 }
 
-func parseStrProductStatus(s string) (Status, error) {
+func ParseStrProductStatus(s string) (Status, error) {
 	for i := range allProductStatuses {
 		if allProductStatuses[i] == s {
 			return Status(i), nil
@@ -59,7 +59,7 @@ func (status *Status) Scan(value interface{}) error {
 		return errors.New("fail to scan data from sql")
 	}
 
-	v, err := parseStrProductStatus(string(bytes))
+	v, err := ParseStrProductStatus(string(bytes))
 
 	if err != nil {
 		return errors.New("fail to scan data from sql")
@@ -82,7 +82,7 @@ func (status *Status) UnmarshalJSON(data []byte) error {
 	if str == "null" {
 		return nil
 	}
-	v, err := parseStrProductStatus(str[1 : len(str)-1])
+	v, err := ParseStrProductStatus(str[1 : len(str)-1])
 	if err != nil {
 		return err
 	}

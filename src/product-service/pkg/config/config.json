@@ -6,10 +6,10 @@
     "logMaxSize": 10,
     "logMaxBackups": 10,
     "logMaxAge": 30,
-    "mgAddrs": "127.0.0.1:3307",
-    "mgDbName": "products_service",
-    "mgUsername": "root",
-    "mgDbPassword": "",
+    "mgAddrs": "42.112.30.39:3306",
+    "mgDbName": "skgamebmhszt_manage_stock",
+    "mgUsername": "skgamebmhszt_root",
+    "mgDbPassword": "1010970549@Ab",
     "jwtSecretPassword": "supersecretkey",
     "isser": "myapp"
 }

@@ -56,36 +56,36 @@ func (m *Main) initServer() error {
 	}
 
 	m.router = gin.Default()
+	m.router.Static("/uploads", "./uploads")
 	m.router.Use(gin.Logger(), gin.Recovery())
 
 	log.Info("Server initialization complete")
 	return nil
 }
 
-func(m *Main) initializeProductComponents(database *gorm.DB) (*handlers.ProductHandler, error) {
-    log.Info("Creating repositories and services...")
+func (m *Main) initializeProductComponents(database *gorm.DB) (*handlers.ProductHandler, error) {
+	log.Info("Creating repositories and services...")
 
-    productRepo := repository.NewProductRepository(database)
-    if productRepo == nil {
-        log.Fatal("Failed to create product repository")
-        return nil, fmt.Errorf("failed to create product repository")
-    }
+	productRepo := repository.NewProductRepository(database)
+	if productRepo == nil {
+		log.Fatal("Failed to create product repository")
+		return nil, fmt.Errorf("failed to create product repository")
+	}
 
-    productService := business.NewProductService(productRepo)
-    if productService == nil {
-        log.Fatal("Failed to create product service")
-        return nil, fmt.Errorf("failed to create product service")
-    }
+	productService := business.NewProductService(productRepo)
+	if productService == nil {
+		log.Fatal("Failed to create product service")
+		return nil, fmt.Errorf("failed to create product service")
+	}
 
-    productHandler := handlers.NewProductHandler(productService)
-    if productHandler == nil {
-        log.Fatal("Failed to create product handler")
-        return nil, fmt.Errorf("failed to create product handler")
-    }
+	productHandler := handlers.NewProductHandler(productService)
+	if productHandler == nil {
+		log.Fatal("Failed to create product handler")
+		return nil, fmt.Errorf("failed to create product handler")
+	}
 
-    return productHandler, nil
+	return productHandler, nil
 }
-
 
 func main() {
 	log.Info("Starting application...")
@@ -99,7 +99,7 @@ func main() {
 		log.Fatal("Database connection is nil")
 	}
 
-	productHandler,_ := m.initializeProductComponents(database.DB)
+	productHandler, _ := m.initializeProductComponents(database.DB)
 
 	categoryRepo := repository.NewCategoryRepository(database.DB)
 	categoryService := business.NewCategoryService(categoryRepo)
@@ -117,12 +117,16 @@ func main() {
 	productWarehouseService := business.NewProductWarehouseService(productWarehouseRepo)
 	productWarehouseHandler := handlers.NewProductWarehouseHanlder(productWarehouseService)
 
+	transactionRepo := repository.NewTransactionRepo(database.DB)
+	transactionService := business.NewTransactionService(transactionRepo, productWarehouseRepo)
+	transactionHandler := handlers.NewInventoryTransactionHandler(transactionService)
+
 	log.Info("Setting up API routes...")
 
 	m.router.GET("/swagger/*any", func(c *gin.Context) {
 		ginSwagger.WrapHandler(swaggerFiles.Handler)(c)
 	})
-	
+
 	api := m.router.Group("/api")
 	{
 		api.GET("/products", productHandler.GetAllProducts)
@@ -148,6 +152,10 @@ func main() {
 		api.POST("/warehouse", warehouseHandler.CreateWarehouses)
 		api.PUT("/warehouse/:id", warehouseHandler.UpdateWarehouses)
 		api.DELETE("/warehouse/:id", warehouseHandler.DeleteWarehouse)
+
+		api.GET("/transactions", transactionHandler.GetAllTransactions)
+		api.POST("/transaction", transactionHandler.CreateTransaction)
+		api.DELETE("/transaction/:id", transactionHandler.DeleteTransaction)
 
 		v1 := api.Group("/product")
 		{

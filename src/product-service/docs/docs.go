@@ -912,6 +912,142 @@ const docTemplate = `{
                 }
             }
         },
+        "/api/transaction": {
+            "post": {
+                "description": "Create a new inventory  with the provided parameters",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "transactions"
+                ],
+                "summary": "Create a new inventory",
+                "parameters": [
+                    {
+                        "description": "Inventory to create",
+                        "name": "inventoryData",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.InventoryTransaction"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Created",
+                        "schema": {
+                            "$ref": "#/definitions/common.Response"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/common.AppError"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/common.ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/transaction/{id}": {
+            "delete": {
+                "description": "Delete a inventory transaction by id",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "transactions"
+                ],
+                "summary": "Deleted a inventory transaction",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Transaction ID",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/common.Response"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/common.ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/transactions": {
+            "get": {
+                "description": "Retrieve all inventory , with optional paging",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "transactions"
+                ],
+                "summary": "Retrieve a list of inventory",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "name": "limit",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "name": "page",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "name": "-",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/common.Response"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/common.AppError"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/common.ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
         "/api/warehouse": {
             "post": {
                 "description": "Create a new warehouse with the provided parameters",
@@ -1154,6 +1290,14 @@ const docTemplate = `{
                 }
             }
         },
+        "common.ErrorResponse": {
+            "type": "object",
+            "properties": {
+                "message": {
+                    "type": "string"
+                }
+            }
+        },
         "common.Response": {
             "type": "object",
             "properties": {
@@ -1214,11 +1358,34 @@ const docTemplate = `{
                 }
             }
         },
+        "models.InventoryTransaction": {
+            "type": "object",
+            "properties": {
+                "product_id": {
+                    "type": "string"
+                },
+                "quantity": {
+                    "type": "integer"
+                },
+                "transaction_date": {
+                    "type": "string"
+                },
+                "transaction_id": {
+                    "type": "string"
+                },
+                "transaction_type": {
+                    "$ref": "#/definitions/models.Type"
+                },
+                "warehouse_id": {
+                    "type": "integer"
+                }
+            }
+        },
         "models.Product": {
             "type": "object",
             "properties": {
                 "category_id": {
-                    "type": "string"
+                    "type": "integer"
                 },
                 "create_at": {
                     "type": "string"
@@ -1248,7 +1415,7 @@ const docTemplate = `{
                     "$ref": "#/definitions/models.Status"
                 },
                 "supplier_id": {
-                    "type": "string"
+                    "type": "integer"
                 },
                 "unit": {
                     "type": "string"
@@ -1302,6 +1469,21 @@ const docTemplate = `{
                 "Pending"
             ]
         },
+        "models.Type": {
+            "type": "integer",
+            "enum": [
+                0,
+                1
+            ],
+            "x-enum-comments": {
+                "In": "0",
+                "Out": "1"
+            },
+            "x-enum-varnames": [
+                "In",
+                "Out"
+            ]
+        },
         "models.UpdateSupplier": {
             "type": "object",
             "properties": {
@@ -1331,13 +1513,13 @@ const docTemplate = `{
         "models.Warehouses": {
             "type": "object",
             "properties": {
-                "Location": {
+                "location": {
                     "type": "string"
                 },
-                "Warehouse_ID": {
+                "warehouse_id": {
                     "type": "integer"
                 },
-                "Warehouse_Name": {
+                "warehouse_name": {
                     "type": "string"
                 }
             }

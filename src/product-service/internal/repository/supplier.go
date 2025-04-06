@@ -133,13 +133,6 @@ func(repo *SupplierRepoImpl) GetById(id interface{}) (*models.Supplier, error){
 				"The supplier with the given ID doesn't exists",
 			)
 		}
-		return nil, common.NewAppError(
-			http.StatusInternalServerError,
-			err,
-			"Error retrieve supplier",
-			"Database error while retrieving supplier",
-			"INTERNAL_SERVER_ERROR",
-		)
 	}
 	return &result, nil
 }

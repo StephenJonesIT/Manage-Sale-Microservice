@@ -62,7 +62,7 @@ func(handler *WarehouseHandler) GetAllWarehouses(ctx *gin.Context){
     }
 
     log.Info("Warehouses list retrieved successfully")
-    ctx.JSON(http.StatusOK, common.NewResponse(
+    ctx.JSON(http.StatusOK, common.NewDetailResponse(
         http.StatusOK, 
         "Successfully retrieved the warehouses list",
         result, 
@@ -106,7 +106,7 @@ func(handler *WarehouseHandler) CreateWarehouses(ctx *gin.Context){
     }
 
     log.Info("Warehouses created successfully")
-    ctx.JSON(http.StatusCreated,common.NewResponse(
+    ctx.JSON(http.StatusCreated,common.NewDetailResponse(
         http.StatusCreated,
         "Warehouses created successfully",
         addWarehouses,
@@ -169,7 +169,7 @@ func(handler *WarehouseHandler) UpdateWarehouses(ctx *gin.Context){
         return
     }
 
-    ctx.JSON(http.StatusOK, common.NewResponse(
+    ctx.JSON(http.StatusOK, common.NewDetailResponse(
         http.StatusOK,
         "Warehouse update successfully",
         existingWarehouse,
@@ -208,7 +208,7 @@ func(handler *WarehouseHandler) DeleteWarehouse(ctx *gin.Context){
         return
     }
 
-    ctx.JSON(http.StatusOK, common.NewResponse(
+    ctx.JSON(http.StatusOK, common.NewDetailResponse(
         http.StatusOK,
         "Warehouse deleted successfully",
         true,
@@ -248,7 +248,7 @@ func(handler *WarehouseHandler) GetWarehouse(ctx *gin.Context){
         return
     }
 
-    ctx.JSON(http.StatusOK, common.NewResponse(
+    ctx.JSON(http.StatusOK, common.NewDetailResponse(
         http.StatusOK,
         "Get a warehouse successfully",
         category,

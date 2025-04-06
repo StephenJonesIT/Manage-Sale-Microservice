@@ -62,7 +62,7 @@ func(handler *CategoryHandler) GetAllCategories(ctx *gin.Context){
     }
 
     log.Info("Categories list retrieved successfully")
-    ctx.JSON(http.StatusOK, common.NewResponse(
+    ctx.JSON(http.StatusOK, common.NewDetailResponse(
         http.StatusOK, 
         "Successfully retrieved the categories list",
         result, 
@@ -106,7 +106,7 @@ func(handler *CategoryHandler) CreateCategory(ctx *gin.Context){
     }
 
     log.Info("Category created successfully")
-    ctx.JSON(http.StatusCreated,common.NewResponse(
+    ctx.JSON(http.StatusCreated,common.NewDetailResponse(
         http.StatusCreated,
         "Category created successfully",
         addCategory,
@@ -169,7 +169,7 @@ func(handler *CategoryHandler) UpdateCategory(ctx *gin.Context){
         return
     }
 
-    ctx.JSON(http.StatusOK, common.NewResponse(
+    ctx.JSON(http.StatusOK, common.NewDetailResponse(
         http.StatusOK,
         "Category update successfully",
         existingCategory,
@@ -208,7 +208,7 @@ func(handler *CategoryHandler) DeleteCategory(ctx *gin.Context){
         return
     }
 
-    ctx.JSON(http.StatusOK, common.NewResponse(
+    ctx.JSON(http.StatusOK, common.NewDetailResponse(
         http.StatusOK,
         "Category deleted successfully",
         true,
@@ -248,7 +248,7 @@ func(handler *CategoryHandler) GetCategory(ctx *gin.Context){
         return
     }
 
-    ctx.JSON(http.StatusOK, common.NewResponse(
+    ctx.JSON(http.StatusOK, common.NewDetailResponse(
         http.StatusOK,
         "Get a category successfully",
         category,

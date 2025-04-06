@@ -1,0 +1,54 @@
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /uploads/*filepath        --> github.com/gin-gonic/gin.(*RouterGroup).createStaticHandler.func1 (3 handlers)
+[GIN-debug] HEAD   /uploads/*filepath        --> github.com/gin-gonic/gin.(*RouterGroup).createStaticHandler.func1 (3 handlers)
+[GIN-debug] GET    /swagger/*any             --> main.main.func1 (5 handlers)
+[GIN-debug] GET    /api/products             --> product-service/internal/handlers.(*ProductHandler).GetAllProducts-fm (5 handlers)
+[GIN-debug] GET    /api/product/:id          --> product-service/internal/handlers.(*ProductHandler).GetProduct-fm (5 handlers)
+[GIN-debug] POST   /api/product              --> product-service/internal/handlers.(*ProductHandler).CreateProduct-fm (5 handlers)
+[GIN-debug] PUT    /api/product/:id          --> product-service/internal/handlers.(*ProductHandler).UpdateProduct-fm (5 handlers)
+[GIN-debug] DELETE /api/product/:id          --> product-service/internal/handlers.(*ProductHandler).DeleteProduct-fm (5 handlers)
+[GIN-debug] GET    /api/categories           --> product-service/internal/handlers.(*CategoryHandler).GetAllCategories-fm (5 handlers)
+[GIN-debug] POST   /api/category             --> product-service/internal/handlers.(*CategoryHandler).CreateCategory-fm (5 handlers)
+[GIN-debug] PUT    /api/category/:id         --> product-service/internal/handlers.(*CategoryHandler).UpdateCategory-fm (5 handlers)
+[GIN-debug] DELETE /api/category/:id         --> product-service/internal/handlers.(*CategoryHandler).DeleteCategory-fm (5 handlers)
+[GIN-debug] GET    /api/category/:id         --> product-service/internal/handlers.(*CategoryHandler).GetCategory-fm (5 handlers)
+[GIN-debug] GET    /api/suppliers            --> product-service/internal/handlers.(*SupplierHandler).GetAllSuppliers-fm (5 handlers)
+[GIN-debug] GET    /api/supplier/:id         --> product-service/internal/handlers.(*SupplierHandler).GetSupplier-fm (5 handlers)
+[GIN-debug] POST   /api/supplier             --> product-service/internal/handlers.(*SupplierHandler).CreateSupplier-fm (5 handlers)
+[GIN-debug] PUT    /api/supplier/:id         --> product-service/internal/handlers.(*SupplierHandler).UpdateSupplier-fm (5 handlers)
+[GIN-debug] DELETE /api/supplier/:id         --> product-service/internal/handlers.(*SupplierHandler).DeleteSupplier-fm (5 handlers)
+[GIN-debug] GET    /api/warehouses           --> product-service/internal/handlers.(*WarehouseHandler).GetAllWarehouses-fm (5 handlers)
+[GIN-debug] GET    /api/warehouse/:id        --> product-service/internal/handlers.(*WarehouseHandler).GetWarehouse-fm (5 handlers)
+[GIN-debug] POST   /api/warehouse            --> product-service/internal/handlers.(*WarehouseHandler).CreateWarehouses-fm (5 handlers)
+[GIN-debug] PUT    /api/warehouse/:id        --> product-service/internal/handlers.(*WarehouseHandler).UpdateWarehouses-fm (5 handlers)
+[GIN-debug] DELETE /api/warehouse/:id        --> product-service/internal/handlers.(*WarehouseHandler).DeleteWarehouse-fm (5 handlers)
+[GIN-debug] GET    /api/transactions         --> product-service/internal/handlers.(*InventoryTransactionHandler).GetAllTransactions-fm (5 handlers)
+[GIN-debug] POST   /api/transaction          --> product-service/internal/handlers.(*InventoryTransactionHandler).CreateTransaction-fm (5 handlers)
+[GIN-debug] DELETE /api/transaction/:id      --> product-service/internal/handlers.(*InventoryTransactionHandler).DeleteTransaction-fm (5 handlers)
+[GIN-debug] GET    /api/product/warehouses   --> product-service/internal/handlers.(*ProductWarehouseHandler).GetAllProductWarehouses-fm (5 handlers)
+[GIN-debug] GET    /api/product/warehouse/:idProduct/:idWarehouse --> product-service/internal/handlers.(*ProductWarehouseHandler).GetProductWarehouse-fm (5 handlers)
+[GIN-debug] POST   /api/product/warehouse    --> product-service/internal/handlers.(*ProductWarehouseHandler).CreateProduct-fm (5 handlers)
+[GIN-debug] PUT    /api/product/warehouse    --> product-service/internal/handlers.(*ProductWarehouseHandler).UpdateProductWarehouse-fm (5 handlers)
+[GIN-debug] DELETE /api/product/warehouse/:idProduct/:idWarehouse --> product-service/internal/handlers.(*ProductWarehouseHandler).DeleteProductWarehouse-fm (5 handlers)
+[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on :8810
+[GIN] 2025/04/07 - 00:03:17 | 200 |            0s |       127.0.0.1 | GET      "/swagger/index.html"
+[GIN] 2025/04/07 - 00:03:17 | 200 |       505.5µs |       127.0.0.1 | GET      "/swagger/index.html"
+[GIN] 2025/04/07 - 00:03:17 | 200 |       505.8µs |       127.0.0.1 | GET      "/swagger/swagger-ui.css"
+[GIN] 2025/04/07 - 00:03:17 | 200 |       505.8µs |       127.0.0.1 | GET      "/swagger/swagger-ui.css"
+[GIN] 2025/04/07 - 00:03:17 | 200 |      1.0418ms |       127.0.0.1 | GET      "/swagger/swagger-ui-bundle.js"
+[GIN] 2025/04/07 - 00:03:17 | 200 |      1.0418ms |       127.0.0.1 | GET      "/swagger/swagger-ui-bundle.js"
+[GIN] 2025/04/07 - 00:03:17 | 200 |         536µs |       127.0.0.1 | GET      "/swagger/swagger-ui-standalone-preset.js"
+[GIN] 2025/04/07 - 00:03:17 | 200 |         536µs |       127.0.0.1 | GET      "/swagger/swagger-ui-standalone-preset.js"
+[GIN] 2025/04/07 - 00:03:17 | 200 |            0s |       127.0.0.1 | GET      "/swagger/doc.json"
+[GIN] 2025/04/07 - 00:03:17 | 200 |            0s |       127.0.0.1 | GET      "/swagger/doc.json"
+[GIN] 2025/04/07 - 00:03:17 | 200 |            0s |       127.0.0.1 | GET      "/swagger/favicon-32x32.png"
+[GIN] 2025/04/07 - 00:03:17 | 200 |            0s |       127.0.0.1 | GET      "/swagger/favicon-32x32.png"
+[GIN] 2025/04/07 - 00:03:25 | 200 |     78.5658ms |       127.0.0.1 | GET      "/api/transactions"
+[GIN] 2025/04/07 - 00:03:25 | 200 |     78.5658ms |       127.0.0.1 | GET      "/api/transactions"

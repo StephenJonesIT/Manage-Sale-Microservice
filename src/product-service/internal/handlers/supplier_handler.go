@@ -62,7 +62,7 @@ func(handler *SupplierHandler) GetAllSuppliers(ctx *gin.Context){
     }
 
     log.Info("suppliers list retrieved successfully")
-    ctx.JSON(http.StatusOK, common.NewResponse(
+    ctx.JSON(http.StatusOK, common.NewDetailResponse(
         http.StatusOK, 
         "Successfully retrieved the suppliers list",
         result, 
@@ -106,7 +106,7 @@ func(handler *SupplierHandler) CreateSupplier(ctx *gin.Context){
     }
 
     log.Info("Supplier created successfully")
-    ctx.JSON(http.StatusCreated,common.NewResponse(
+    ctx.JSON(http.StatusCreated,common.NewDetailResponse(
         http.StatusCreated,
         "Supplier created successfully",
         addSupplier,
@@ -172,7 +172,7 @@ func(handler *SupplierHandler) UpdateSupplier(ctx *gin.Context){
         return
     }
 
-    ctx.JSON(http.StatusOK, common.NewResponse(
+    ctx.JSON(http.StatusOK, common.NewDetailResponse(
         http.StatusOK,
         "Supplier update successfully",
         existingSupplier,
@@ -207,7 +207,7 @@ func(handler *SupplierHandler) DeleteSupplier(ctx *gin.Context){
     }
 		supplier, err := handler.supplierHandler.GetSupplierByID(id)
     	if err != nil {
-        ctx.JSON(http.StatusInternalServerError, err)
+        ctx.JSON(http.StatusNotFound, err)
         return
     	}
 
@@ -216,7 +216,7 @@ func(handler *SupplierHandler) DeleteSupplier(ctx *gin.Context){
         return
     }
 
-    ctx.JSON(http.StatusOK, common.NewResponse(
+    ctx.JSON(http.StatusOK, common.NewDetailResponse(
         http.StatusOK,
         "Supplier deleted successfully",
         true,
@@ -256,7 +256,7 @@ func(handler *SupplierHandler) GetSupplier(ctx *gin.Context){
         return
     }
 
-    ctx.JSON(http.StatusOK, common.NewResponse(
+    ctx.JSON(http.StatusOK, common.NewDetailResponse(
         http.StatusOK,
         "Get a Supplier successfully",
         Supplier,

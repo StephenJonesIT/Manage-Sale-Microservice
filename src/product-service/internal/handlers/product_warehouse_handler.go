@@ -34,7 +34,7 @@ func NewProductWarehouseHanlder(service business.ProductWarehouseService) *Produ
 // @Failure 500 {object} common.AppError
 // @Router /api/product/warehouses [get]
 func (handler *ProductWarehouseHandler) GetAllProductWarehouses(ctx *gin.Context) {
-    log.Info("GetAllProducts endpoint called")
+    log.Info("GetAllProductWarehouses endpoint called")
 
     var paging common.Paging
     if err := ctx.ShouldBind(&paging); err != nil {
@@ -59,7 +59,7 @@ func (handler *ProductWarehouseHandler) GetAllProductWarehouses(ctx *gin.Context
     }
 
     log.Info("Product warehouses list retrieved successfully")
-    ctx.JSON(http.StatusOK, common.NewResponse(
+    ctx.JSON(http.StatusOK, common.NewDetailResponse(
         http.StatusOK, 
         "Successfully retrieved the product warehouses list",
         result, 
@@ -80,7 +80,7 @@ func (handler *ProductWarehouseHandler) GetAllProductWarehouses(ctx *gin.Context
 // @Failure 500 {object} common.AppError
 // @Router /api/product/warehouse [post]
 func(handler *ProductWarehouseHandler) CreateProduct(ctx *gin.Context){
-    log.Info("CreateProduct endpoint called")
+    log.Info("CreateProductWarehouse endpoint called")
 
     var temp models.ProductWarehouses
 
@@ -96,14 +96,14 @@ func(handler *ProductWarehouseHandler) CreateProduct(ctx *gin.Context){
         return
     }
 
-    if err := handler.service.CreateProductWarehouse(&temp); err != nil {
+    if err := handler.service.CreateProductWarehouse(ctx,&temp); err != nil {
         log.Error("Failed to create product warehouse: ", err)
         ctx.JSON(http.StatusInternalServerError, err)
         return
     }
 
     log.Info("Product warehouse created successfully")
-    ctx.JSON(http.StatusCreated,common.NewResponse(
+    ctx.JSON(http.StatusCreated,common.NewDetailResponse(
         http.StatusCreated,
         "Product warehouse created successfully",
         temp,
@@ -156,14 +156,14 @@ func (handler *ProductWarehouseHandler) UpdateProductWarehouse(ctx *gin.Context)
 	
 	productWarehouseExisting.Quantity = productWarehouse.Quantity
 
-    if err := handler.service.UpdateProductWarehouse(productWarehouseExisting); err != nil {
+    if err := handler.service.UpdateProductWarehouse(ctx,productWarehouseExisting); err != nil {
         log.Error("Failed to update product: ", err)
         ctx.JSON(http.StatusInternalServerError, err)
         return
     }
 
     log.Info("Product warehouse updated successfully")
-    ctx.JSON(http.StatusOK, common.NewResponse(
+    ctx.JSON(http.StatusOK, common.NewDetailResponse(
         http.StatusOK,
         "Product warehouse update successfully",
         productWarehouseExisting,
@@ -184,7 +184,7 @@ func (handler *ProductWarehouseHandler) UpdateProductWarehouse(ctx *gin.Context)
 // @Success 500 {object} common.AppError
 // @Router /api/product/warehouse/{idProduct}/{idWarehouse} [delete]
 func (handler *ProductWarehouseHandler) DeleteProductWarehouse(ctx *gin.Context){
-    log.Info("DeleteProduct endpoint called")
+    log.Info("DeleteProductWarehouse endpoint called")
 
     idProduct := ctx.Param("idProduct")
 	idWarehouse := ctx.Param("idWarehouse")
@@ -203,7 +203,7 @@ func (handler *ProductWarehouseHandler) DeleteProductWarehouse(ctx *gin.Context)
 		return
 	}
 
-    errDelete := handler.service.DeleteProductWarehouse(productWarehouseExisting)
+    errDelete := handler.service.DeleteProductWarehouse(productWarehouseExisting.Product_ID,productWarehouseExisting.WareHouse_ID)
 
     if errDelete != nil {
         log.Error("Failed to delete product warehouse: ", errDelete)
@@ -212,7 +212,7 @@ func (handler *ProductWarehouseHandler) DeleteProductWarehouse(ctx *gin.Context)
     }
 
     log.Info("Product deleted warehouse successfully")
-    ctx.JSON(http.StatusOK, common.NewResponse(
+    ctx.JSON(http.StatusOK, common.NewDetailResponse(
         http.StatusOK,
         "Product warehouse successfully deleted",
         nil,
@@ -254,7 +254,7 @@ func (handler *ProductWarehouseHandler) GetProductWarehouse(ctx *gin.Context) {
 	}
 
 	log.Info("Get a product warehouse successfully")
-	ctx.JSON(http.StatusOK, common.NewResponse(
+	ctx.JSON(http.StatusOK, common.NewDetailResponse(
 		http.StatusOK,
 		"Get a product warehouse successfully",
 		product,

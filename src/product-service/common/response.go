@@ -6,14 +6,20 @@
 package common
 
 type Response struct {
-	Code  	int 	    	`json:"code"`
+	Code  	int 	    	`json:"code,omitempty"`
 	Message interface{}     `json:"message,omitempty"`
 	Data  	interface{}   	`json:"data"`
 	Filters interface{} 	`json:"filter,omitempty"`
 	Paging  interface{} 	`json:"paging,omitempty"`
 }
 
-func NewResponse(code int, message string, data, filter, paging interface{}) *Response {
+func NewResponse(data interface{}) *Response{
+	return &Response{
+		Data: data,
+	}
+}
+
+func NewDetailResponse(code int, message string, data, filter, paging interface{}) *Response {
 	return &Response{
 		Code:    code,
 		Message: message,

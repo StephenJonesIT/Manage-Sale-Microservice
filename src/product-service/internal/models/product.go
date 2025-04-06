@@ -16,9 +16,9 @@ type Product struct {
 	Uint           string  `json:"unit,omitempty" gorm:"column:unit"`
 	Image_Url      string  `json:"image_url,omitempty" gorm:"column:image_url"`
 	Description    string  `json:"description,omitempty" gorm:"column:description"`
-	Product_Status *Status `json:"status,omitempty" gorm:"status"`
-	Category_ID    string  `json:"category_id,omitempty" gorm:"column:category_id"`
-	Supplier_ID	   string  `json:"supplier_id,omitempty" gorm:"column:supplier_id"`
+	Product_Status *Status `json:"status,omitempty" gorm:"column:status"`
+	Category_ID    int	   `json:"category_id,omitempty" gorm:"column:category_id"`
+	Supplier_ID	   int	   `json:"supplier_id,omitempty" gorm:"column:supplier_id"`
 	common.CommonTime
 }
 
