@@ -11,8 +11,7 @@ import (
 
 var DB *gorm.DB
 func ConnectDatabase() error{
-	dsn := fmt.Sprintf("%s:1010970549abcABC@tcp(%s)/%s?charset=utf8mb4&parseTime=True&loc=Local",
-        common.Config.MgDbUserName,
+	dsn := fmt.Sprintf("skgamebmhszt_root:1010970549abcABC@tcp(%s)/%s?charset=utf8mb4&parseTime=True&loc=Local",
         common.Config.MgAddrs,
         common.Config.MgDbName,
     )
