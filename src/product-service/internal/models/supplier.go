@@ -3,7 +3,8 @@
 // @Author Tran Thanh Sang (tranthanhsang.it.la@gmail.com)
 package models
 
-import "product-service/common"
+import "github.com/StephenJonesIT/Manage-Sale-Microservice/src/product-service/common"
+
 
 type Supplier struct {
 	Supplier_ID   int    `gorm:"column:supplier_id" json:"supplier_id"`

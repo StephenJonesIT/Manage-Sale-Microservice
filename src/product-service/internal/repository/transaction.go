@@ -6,9 +6,10 @@ package repository
 
 import (
 	"context"
+
+	"github.com/StephenJonesIT/Manage-Sale-Microservice/src/product-service/common"
+	"github.com/StephenJonesIT/Manage-Sale-Microservice/src/product-service/internal/models"
 	"gorm.io/gorm"
-	"product-service/common"
-	"product-service/internal/models"
 )
 
 type TransactionRepository interface {

@@ -2,8 +2,8 @@ package database
 
 import (
 	"fmt"
-	"product-service/common"
 
+	"github.com/StephenJonesIT/Manage-Sale-Microservice/src/product-service/common"
 	log "github.com/sirupsen/logrus"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"

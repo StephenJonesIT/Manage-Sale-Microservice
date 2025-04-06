@@ -7,10 +7,11 @@ package business
 import (
 	"context"
 	"fmt"
-	"product-service/common"
-	"product-service/internal/models"
-	"product-service/internal/repository"
 	"sync"
+
+	"github.com/StephenJonesIT/Manage-Sale-Microservice/src/product-service/common"
+	"github.com/StephenJonesIT/Manage-Sale-Microservice/src/product-service/internal/models"
+	"github.com/StephenJonesIT/Manage-Sale-Microservice/src/product-service/internal/repository"
 )
 
 type TransactionService interface {

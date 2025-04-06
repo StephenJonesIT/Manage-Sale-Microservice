@@ -2,15 +2,15 @@
 * @File: repository.category_repository.go
 * @Description: Implements category CRUD functions for MySQL
 * @Author: Tran Thanh Sang (tranthanhsang.it.la@gmail.com)
-*/
+ */
 package repository
 
 import (
 	"errors"
 	"net/http"
-	"product-service/common"
-	"product-service/internal/models"
 
+	"github.com/StephenJonesIT/Manage-Sale-Microservice/src/product-service/common"
+	"github.com/StephenJonesIT/Manage-Sale-Microservice/src/product-service/internal/models"
 	"gorm.io/gorm"
 )
 

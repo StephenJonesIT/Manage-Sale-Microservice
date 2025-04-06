@@ -2,14 +2,14 @@
 * @File: business.product_service.go
 * @Description: Implements Product CRUD functions for ProductService
 * @Author: Tran Thanh Sang (tranthanhsang.it.la@gmail.com)
-*/
+ */
 
 package business
 
 import (
-	"product-service/common"
-	"product-service/internal/models"
-	"product-service/internal/repository"
+	"github.com/StephenJonesIT/Manage-Sale-Microservice/src/product-service/common"
+	"github.com/StephenJonesIT/Manage-Sale-Microservice/src/product-service/internal/models"
+	"github.com/StephenJonesIT/Manage-Sale-Microservice/src/product-service/internal/repository"
 )
 
 type ProductServiceInterface interface {

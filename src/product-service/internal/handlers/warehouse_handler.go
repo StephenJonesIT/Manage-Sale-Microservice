@@ -7,11 +7,11 @@ package handlers
 
 import (
 	"net/http"
-	"product-service/common"
-	"product-service/internal/business"
-	"product-service/internal/models"
 	"strconv"
 
+	"github.com/StephenJonesIT/Manage-Sale-Microservice/src/product-service/common"
+	"github.com/StephenJonesIT/Manage-Sale-Microservice/src/product-service/internal/business"
+	"github.com/StephenJonesIT/Manage-Sale-Microservice/src/product-service/internal/models"
 	"github.com/gin-gonic/gin"
 	log "github.com/sirupsen/logrus"
 )
