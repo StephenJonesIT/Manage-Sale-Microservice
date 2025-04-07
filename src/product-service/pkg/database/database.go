@@ -9,7 +9,7 @@ import (
 
 var DB *gorm.DB
 func ConnectDatabase() error{
-	dsn := fmt.Sprintf("skgamebmhszt_root:1010970549abcABC@tcp(42.112.30.39:3306)/skgamebmhszt_manage_stock?charset=utf8mb4&parseTime=True&loc=Local")
+	dsn := fmt.Sprintf("skgamebmhszt_root:1010970549abcABC@tcp(3039.hostingviet.vn:3306)/skgamebmhszt_manage_stock?charset=utf8mb4&parseTime=True&loc=Local")
 	db, err := gorm.Open(mysql.Open(dsn), &gorm.Config{})
 	if err != nil {
 		log.Debug("Failed to connect to database!", err)
