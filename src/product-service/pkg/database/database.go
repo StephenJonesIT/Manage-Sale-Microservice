@@ -2,8 +2,6 @@ package database
 
 import (
 	"fmt"
-
-	"github.com/StephenJonesIT/Manage-Sale-Microservice/src/product-service/common"
 	log "github.com/sirupsen/logrus"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
@@ -11,10 +9,7 @@ import (
 
 var DB *gorm.DB
 func ConnectDatabase() error{
-	dsn := fmt.Sprintf("skgamebmhszt_root:1010970549abcABC@tcp(%s)/%s?charset=utf8mb4&parseTime=True&loc=Local",
-        common.Config.MgAddrs,
-        common.Config.MgDbName,
-    )
+	dsn := fmt.Sprintf("skgamebmhszt_root:1010970549abcABC@tcp(42.112.30.39:3306)/skgamebmhszt_manage_stock?charset=utf8mb4&parseTime=True&loc=Local")
 	db, err := gorm.Open(mysql.Open(dsn), &gorm.Config{})
 	if err != nil {
 		log.Debug("Failed to connect to database!", err)

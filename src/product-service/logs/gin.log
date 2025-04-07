@@ -37,4 +37,16 @@
 [GIN-debug] DELETE /api/product/warehouse/:idProduct/:idWarehouse --> github.com/StephenJonesIT/Manage-Sale-Microservice/src/product-service/internal/handlers.(*ProductWarehouseHandler).DeleteProductWarehouse-fm (5 handlers)
 [GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
 Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
-[GIN-debug] Listening and serving HTTP on :8810
+[GIN-debug] Listening and serving HTTP on :8080
+[GIN] 2025/04/07 - 09:56:20 | 200 |       505.9µs |       127.0.0.1 | GET      "/swagger/index.html"
+[GIN] 2025/04/07 - 09:56:20 | 200 |       505.9µs |       127.0.0.1 | GET      "/swagger/index.html"
+[GIN] 2025/04/07 - 09:56:20 | 200 |            0s |       127.0.0.1 | GET      "/swagger/swagger-ui.css"
+[GIN] 2025/04/07 - 09:56:20 | 200 |            0s |       127.0.0.1 | GET      "/swagger/swagger-ui.css"
+[GIN] 2025/04/07 - 09:56:20 | 200 |       509.2µs |       127.0.0.1 | GET      "/swagger/swagger-ui-standalone-preset.js"
+[GIN] 2025/04/07 - 09:56:20 | 200 |       509.2µs |       127.0.0.1 | GET      "/swagger/swagger-ui-standalone-preset.js"
+[GIN] 2025/04/07 - 09:56:20 | 200 |      3.5987ms |       127.0.0.1 | GET      "/swagger/swagger-ui-bundle.js"
+[GIN] 2025/04/07 - 09:56:20 | 200 |      3.5987ms |       127.0.0.1 | GET      "/swagger/swagger-ui-bundle.js"
+[GIN] 2025/04/07 - 09:56:20 | 200 |            0s |       127.0.0.1 | GET      "/swagger/doc.json"
+[GIN] 2025/04/07 - 09:56:20 | 200 |            0s |       127.0.0.1 | GET      "/swagger/doc.json"
+[GIN] 2025/04/07 - 09:56:20 | 200 |       776.9µs |       127.0.0.1 | GET      "/swagger/favicon-32x32.png"
+[GIN] 2025/04/07 - 09:56:20 | 200 |       776.9µs |       127.0.0.1 | GET      "/swagger/favicon-32x32.png"
