@@ -14,7 +14,7 @@ import (
 )
 
 type ProductWarehouseRepo interface {
-	GetAll(paging *common.Paging) ([]models.ProductWarehouses, error)
+	GetAll(paging *common.Paging) ([]models.WarehousesList, error)
 	GetByID(idProduct, idWarehouse interface{}) (*models.ProductWarehouses, error)
 	Create(ctx context.Context, item *models.ProductWarehouses) error
 	Update(ctx context.Context, item *models.ProductWarehouses) error
@@ -31,12 +31,10 @@ func NewProductWarehouseRepo(db *gorm.DB) *ProductWarehouseRepoImple {
 	return &ProductWarehouseRepoImple{db: db}
 }
 
-func (repo *ProductWarehouseRepoImple) GetAll(paging *common.Paging) ([]models.ProductWarehouses, error) {
-	var result []models.ProductWarehouses
+func (repo *ProductWarehouseRepoImple) GetAll(paging *common.Paging) ([]models.WarehousesList, error) {
+	var result []models.WarehousesList
 
-	sql := repo.db
-
-	if err := sql.Table(models.ProductWarehouses{}.TableName()).Count(&paging.Total).Error; err != nil {
+	if err := repo.db.Table(models.ProductWarehouses{}.TableName()).Count(&paging.Total).Error; err != nil {
 		if errors.Is(err, gorm.ErrRecordNotFound) {
 			return nil, common.NewAppError(
 				http.StatusNotFound,
@@ -64,7 +62,11 @@ func (repo *ProductWarehouseRepoImple) GetAll(paging *common.Paging) ([]models.P
 		)
 	}
 
-	if err := sql.Order("last_updated desc").
+	if err := repo.db.Table(models.ProductWarehouses{}.TableName()).
+		Select("product_warehouse.product_id, p.product_name as product_name, product_warehouse.warehouse_id, w.warehouse_name as warehouses_name,product_warehouse.quantity").
+		Joins("JOIN products as p ON p.product_id = product_warehouse.product_id").
+    	Joins("JOIN warehouses as w ON w.warehouse_id = product_warehouse.warehouse_id").
+		Order("last_updated desc").
 		Offset((paging.Page - 1) * paging.Limit).
 		Limit(paging.Limit).
 		Find(&result).Error; err != nil {

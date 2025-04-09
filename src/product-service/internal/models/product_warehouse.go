@@ -16,3 +16,11 @@ type ProductWarehouses struct {
 func(ProductWarehouses) TableName() string{
 	return "product_warehouse"
 }
+
+type WarehousesList struct {
+	Product_ID   	string
+	Product_Name    string
+	WareHouse_ID 	int
+	Warehouses_Name string
+	Quantity     	int
+}

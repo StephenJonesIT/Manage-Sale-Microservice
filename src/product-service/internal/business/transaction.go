@@ -15,7 +15,7 @@ import (
 )
 
 type TransactionService interface {
-	GetTransactions(ctx context.Context, paging *common.Paging) ([]models.InventoryTransaction, error)
+	GetTransactions(ctx context.Context, paging *common.Paging) ([]models.Transaction, error)
 	DeleteTransaction(ctx context.Context, transactionID string) error
 	CreateGoodsReceipt(ctx context.Context, transaction *models.InventoryTransaction) error
 	CreateGoodsIssue(ctx context.Context, transaction *models.InventoryTransaction) error
@@ -39,7 +39,7 @@ func NewTransactionService(
 func (service *TransactionServiceImpl) GetTransactions(
 	ctx context.Context,
 	paging *common.Paging,
-) ([]models.InventoryTransaction, error) {
+) ([]models.Transaction, error) {
 	paging.Process()
 	return service.transactionRepo.GetTransactions(ctx, paging)
 }

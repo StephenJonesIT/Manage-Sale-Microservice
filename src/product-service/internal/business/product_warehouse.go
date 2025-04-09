@@ -12,7 +12,7 @@ import (
 )
 
 type ProductWarehouseService interface {
-	GetAllProductWarehouses(paging *common.Paging) ([]models.ProductWarehouses, error)
+	GetAllProductWarehouses(paging *common.Paging) ([]models.WarehousesList, error)
 	GetProductWarehouse(idProduct, idWarehouse interface{}) (*models.ProductWarehouses, error)
 	CreateProductWarehouse(ctx context.Context,item *models.ProductWarehouses) error
 	UpdateProductWarehouse(ctx context.Context,item *models.ProductWarehouses) error
@@ -27,7 +27,7 @@ func NewProductWarehouseService(repo repository.ProductWarehouseRepo) *ProductWa
 	return &ProductWarehouseServiceImpl{service: repo}
 }
 
-func(biz *ProductWarehouseServiceImpl) GetAllProductWarehouses(paging *common.Paging) ([]models.ProductWarehouses, error){
+func(biz *ProductWarehouseServiceImpl) GetAllProductWarehouses(paging *common.Paging) ([]models.WarehousesList, error){
 	return biz.service.GetAll(paging)
 }
 

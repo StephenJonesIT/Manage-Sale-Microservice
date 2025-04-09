@@ -13,7 +13,7 @@ import (
 )
 
 type TransactionRepository interface {
-	GetTransactions(ctx context.Context, paging *common.Paging) ([]models.InventoryTransaction, error)
+	GetTransactions(ctx context.Context, paging *common.Paging) ([]models.Transaction, error)
 	GetTransactionByID(ctx context.Context, transactionID string) (*models.InventoryTransaction, error)
 	Update(ctx context.Context, tx *gorm.DB, item *models.InventoryTransaction) error
 	Delete(ctx context.Context, transactionID string) error
@@ -29,8 +29,8 @@ func NewTransactionRepo(db *gorm.DB) *TransactionRepositoryImpl {
 	return &TransactionRepositoryImpl{DB: db}
 }
 
-func (repo *TransactionRepositoryImpl) GetTransactions(ctx context.Context, paging *common.Paging) ([]models.InventoryTransaction, error) {
-	var result []models.InventoryTransaction
+func (repo *TransactionRepositoryImpl) GetTransactions(ctx context.Context, paging *common.Paging) ([]models.Transaction, error) {
+	var result []models.Transaction
 
 	if err := repo.DB.Table(models.InventoryTransaction{}.TableName()).Count(&paging.Total).Error; err != nil {
 		return nil, err
@@ -38,6 +38,9 @@ func (repo *TransactionRepositoryImpl) GetTransactions(ctx context.Context, pagi
 
 	if err := repo.DB.WithContext(ctx).
 		Table(models.InventoryTransaction{}.TableName()).
+		Select("inventory_transactions.*, p.product_name as product_name, w.warehouse_name as warehouses_name").
+		Joins("JOIN products as p ON p.product_id = inventory_transactions.product_id").
+    	Joins("JOIN warehouses as w ON w.warehouse_id = inventory_transactions.warehouse_id").
 		Order("transaction_date desc").
 		Offset((paging.Page - 1) * paging.Limit).
 		Limit(paging.Limit).
